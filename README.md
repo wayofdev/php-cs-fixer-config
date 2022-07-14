@@ -12,10 +12,10 @@
 <br>
 
 <div align="center">
-<a href="https://actions-badge.atrox.dev/wayofdev/php-package-tpl/goto"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Flotyp%2Fdotfiles%2Fbadge&style=flat-square"/></a>
-<a href="https://github.com/wayofdev/php-package-tpl/tags"><img src="https://img.shields.io/github/v/tag/wayofdev/php-package-tpl?sort=semver&style=flat-square" alt="Latest Version"></a>
-<a href="LICENSE"><img src="https://img.shields.io/github/license/wayofdev/php-package-tpl.svg?style=flat-square&color=blue" alt="Software License"/></a>
-<a href="#"><img alt="Commits since latest release" src="https://img.shields.io/github/commits-since/wayofdev/php-package-tpl/latest?style=flat-square"></a>
+<a href="https://actions-badge.atrox.dev/wayofdev/php-cs-fixer-config/goto"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Flotyp%2Fdotfiles%2Fbadge&style=flat-square"/></a>
+<a href="https://github.com/wayofdev/php-cs-fixer-config/tags"><img src="https://img.shields.io/github/v/tag/wayofdev/php-cs-fixer-config?sort=semver&style=flat-square" alt="Latest Version"></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/wayofdev/php-cs-fixer-config.svg?style=flat-square&color=blue" alt="Software License"/></a>
+<a href="#"><img alt="Commits since latest release" src="https://img.shields.io/github/commits-since/wayofdev/php-cs-fixer-config/latest?style=flat-square"></a>
 </div>
 
 <br>
@@ -26,7 +26,7 @@ This is minimal PHP template which is used by other PHP projects in wayofdev org
 
 If you **like/use** this package, please consider **starring** it. Thanks!
 
-![Screenshot](assets/screenshot.png)
+<br>
 
 ## 💿 Installation
 
@@ -70,7 +70,7 @@ $ make cs-fix
 
 ## 🤝 License
 
-[![Licence](https://img.shields.io/github/license/wayofdev/php-package-tpl?style=for-the-badge&color=blue)](./LICENSE)
+[![Licence](https://img.shields.io/github/license/wayofdev/php-cs-fixer-config?style=for-the-badge&color=blue)](./LICENSE)
 
 <br>
 

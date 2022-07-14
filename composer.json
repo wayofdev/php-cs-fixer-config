@@ -1,21 +1,22 @@
 {
-    "name": "wayofdev/package-tpl",
-    "description": "PHP package template with GitHub Actions",
+    "name": "wayofdev/cs-fixer-config",
+    "description": "Package adds custom rule-sets to php-cs-fixer",
     "type": "library",
     "license": "MIT",
     "homepage": "https://wayof.dev",
     "support": {
-        "issues": "https://github.com/wayofdev/php-package-tpl/issues",
-        "source": "https://github.com/wayofdev/php-package-tpl"
+        "issues": "https://github.com/wayofdev/php-cs-fixer-config/issues",
+        "source": "https://github.com/wayofdev/php-cs-fixer-config"
     },
     "authors": [
         {
-            "name": "lotyp",
+            "name": "Andrij Orlenko",
             "email": "the@wayof.dev"
         }
     ],
     "require": {
-        "php": "^8.1"
+        "php": "^8.1",
+        "friendsofphp/php-cs-fixer": "^3.9.3"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.28",
@@ -29,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "WayOfDev\\PackageTpl\\": "src/"
+            "WayOfDev\\PhpCsFixer\\Config\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WayOfDev\\PackageTpl\\Tests\\": "tests/"
+            "WayOfDev\\PhpCsFixer\\Config\\Tests\\": "tests/"
         }
     },
     "scripts": {

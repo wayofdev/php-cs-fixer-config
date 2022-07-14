@@ -11,7 +11,34 @@ on:  # yamllint disable-line rule:truthy
       - master
 
 jobs:
-  job_one:
-    name: job_one
+  tests:
+    name: PHP ${{ matrix.php }} - ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: ["ubuntu-22.04"]
+        php: ["8.1"]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, fileinfo
+          ini-values: error_reporting=E_ALL
+          tools: composer:v2
+          coverage: none
+
+      - name: Install dependencies
+        run: composer install
+
+      - name: Execute tests
+        run: make test
+
+      - name: Run phpstan
+        run: make stan
 
 ...

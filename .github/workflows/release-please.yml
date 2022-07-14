@@ -18,7 +18,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
-          package-name: php-package-tpl
+          package-name: php-cs-fixer-config
           default-branch: master
           changelog-types: |
             [

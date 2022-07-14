@@ -29,7 +29,7 @@ else
 	WHITE := ""
 	RST := ""
 endif
-MAKE_LOGFILE = /tmp/wayofdev-php-package-tpl.log
+MAKE_LOGFILE = /tmp/wayofdev-php-cs-fixer-config.log
 MAKE_CMD_COLOR := $(BLUE)
 
 help:
@@ -40,13 +40,17 @@ help:
 	@echo
 	@echo '    📑 Logs are stored in      $(MAKE_LOGFILE)'
 	@echo
-	@echo '    📦 Package                 php-package-tpl (github.com/wayofdev/php-package-tpl)'
+	@echo '    📦 Package                 php-cs-fixer-config (github.com/wayofdev/php-cs-fixer-config)'
 	@echo '    🤠 Author                  Andrij Orlenko (github.com/lotyp)'
 	@echo '    🏢 ${YELLOW}Org                     wayofdev (github.com/wayofdev)${RST}'
 .PHONY: help
 
-all: install hooks
+all: prepare install hooks
 .PHONY: all
+
+prepare:
+	mkdir -p .build/php-cs-fixer
+.PHONY: prepare
 
 # Composer
 # ------------------------------------------------------------------------------------
@@ -60,11 +64,11 @@ update: ## Updates composer dependencies by running composer update command
 
 # Testing
 # ------------------------------------------------------------------------------------
-cs-diff: ## Runs php-cs-fixer in dry-run mode and shows diff which will by applied
+cs-diff: prepare ## Runs php-cs-fixer in dry-run mode and shows diff which will by applied
 	$(COMPOSER_RUN) cs-diff
 .PHONY: cs-diff
 
-cs-fix: ## Fixes code to follow coding standards using php-cs-fixer
+cs-fix: prepare ## Fixes code to follow coding standards using php-cs-fixer
 	$(COMPOSER_RUN) cs-fix
 .PHONY: cs-fix
 
