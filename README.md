@@ -12,10 +12,11 @@
 <br>
 
 <div align="center">
-<a href="https://actions-badge.atrox.dev/wayofdev/php-cs-fixer-config/goto"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Flotyp%2Fdotfiles%2Fbadge&style=flat-square"/></a>
-<a href="https://github.com/wayofdev/php-cs-fixer-config/tags"><img src="https://img.shields.io/github/v/tag/wayofdev/php-cs-fixer-config?sort=semver&style=flat-square" alt="Latest Version"></a>
-<a href="LICENSE"><img src="https://img.shields.io/github/license/wayofdev/php-cs-fixer-config.svg?style=flat-square&color=blue" alt="Software License"/></a>
-<a href="#"><img alt="Commits since latest release" src="https://img.shields.io/github/commits-since/wayofdev/php-cs-fixer-config/latest?style=flat-square"></a>
+<a href="https://github.com/wayofdev/php-cs-fixer-config/actions"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwayofdev%2Fphp-cs-fixer-config%2Fbadge&style=flat-square"/></a>
+<a href="https://packagist.org/packages/wayofdev/cs-fixer-config"><img src="https://img.shields.io/packagist/dt/wayofdev/cs-fixer-config?&style=flat-square" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/wayofdev/cs-fixer-config"><img src="https://img.shields.io/packagist/v/wayofdev/cs-fixer-config?&style=flat-square" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/wayofdev/cs-fixer-config"><img src="https://img.shields.io/packagist/l/wayofdev/cs-fixer-config?style=flat-square&color=blue" alt="Software License"/></a>
+<a href="https://packagist.org/packages/wayofdev/cs-fixer-config"><img alt="Commits since latest release" src="https://img.shields.io/github/commits-since/wayofdev/php-cs-fixer-config/latest?style=flat-square"></a>
 </div>
 
 <br>
