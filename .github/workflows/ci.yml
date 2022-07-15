@@ -11,8 +11,8 @@ on:  # yamllint disable-line rule:truthy
       - master
 
 jobs:
-  tests:
-    name: PHP ${{ matrix.php }} - ${{ matrix.os }}
+  integration:
+    name: Testing on PHP ${{ matrix.php }} - ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true
@@ -20,7 +20,7 @@ jobs:
         os: ["ubuntu-22.04"]
         php: ["8.1"]
     steps:
-      - name: Checkout code
+      - name: Check out the codebase
         uses: actions/checkout@v3
 
       - name: Setup PHP
@@ -32,13 +32,24 @@ jobs:
           tools: composer:v2
           coverage: none
 
+      - name: Load cached dependencies
+        id: cached-composer-dependencies
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: vendor-${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+
       - name: Install dependencies
+        if: steps.cached-composer-dependencies.outputs.cache-hit != 'true'
         run: composer install
 
-      - name: Execute tests
+      - name: Run coding standards task
+        run: make cs-diff
+
+      - name: Execute phpunit tests
         run: make test
 
-      - name: Run phpstan
+      - name: Run static analysis using phpstan
         run: make stan
 
 ...
