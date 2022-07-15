@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
+use WayOfDev\PhpCsFixer\Config\ConfigBuilder;
 use WayOfDev\PhpCsFixer\Config\RuleSets\DefaultSet;
 
 require_once 'vendor/autoload.php';
 
-$config = WayOfDev\PhpCsFixer\Config\ConfigBuilder::createFromRuleSet(new DefaultSet())
+$config = ConfigBuilder::createFromRuleSet(new DefaultSet())
     ->inDir(__DIR__ . '/src')
     ->inDir(__DIR__ . '/tests')
     ->addFiles([__FILE__])

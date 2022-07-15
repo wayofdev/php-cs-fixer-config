@@ -1,8 +1,8 @@
 <br>
 
 <div align="center">
-<img width="456" src="https://raw.githubusercontent.com/wayofdev/ansible-role-tpl/master/assets/logo.gh-light-mode-only.png#gh-light-mode-only">
-<img width="456" src="https://raw.githubusercontent.com/wayofdev/ansible-role-tpl/master/assets/logo.gh-dark-mode-only.png#gh-dark-mode-only">
+<img width="456" src="https://raw.githubusercontent.com/wayofdev/php-cs-fixer-config/master/assets/logo.gh-light-mode-only.png#gh-light-mode-only">
+<img width="456" src="https://raw.githubusercontent.com/wayofdev/php-cs-fixer-config/master/assets/logo.gh-dark-mode-only.png#gh-dark-mode-only">
 </div>
 
 
@@ -20,9 +20,9 @@
 
 <br>
 
-# PHP Package Template
+# PHP CS Fixer Config
 
-This is minimal PHP template which is used by other PHP projects in wayofdev organization.
+Wrapper with pre-defined rules around the [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) package — A tool to automatically fix PHP Coding Standards issues.
 
 If you **like/use** this package, please consider **starring** it. Thanks!
 
@@ -35,8 +35,72 @@ If you **like/use** this package, please consider **starring** it. Thanks!
 Require as dependency:
 
 ```bash
-$ composer req wayofdev/package-tpl
+$ composer req wayofdev/cs-fixer-config
 ```
+
+<br>
+
+## 🛠 Configuration
+
+1. Create PHP file and name it `.php-cs-fixer.dist.php` and place it inside root directory of project. It will be recognized by PHP CS Fixer automatically.
+
+2. Example contents of `.php-cs-fixer.dist.php` file:
+
+   ```php
+   <?php
+
+   declare(strict_types=1);
+
+   use WayOfDev\PhpCsFixer\Config\ConfigBuilder;
+   use WayOfDev\PhpCsFixer\Config\RuleSets\DefaultSet;
+
+   require_once 'vendor/autoload.php';
+
+   return ConfigBuilder::createFromRuleSet(new DefaultSet())
+       ->inDir(__DIR__ . '/src')
+       ->inDir(__DIR__ . '/tests')
+       ->addFiles([__FILE__])
+       ->getConfig();
+   ```
+
+3. Place `.php-cs-fixer.cache` file into `.gitignore`
+
+<br>
+
+## 💻 Usage
+
+### → Running
+
+Fix coding standards by simply running console command:
+
+```bash
+$ php vendor/bin/php-cs-fixer fix -v
+```
+
+### → Using Makefile
+
+To use with our `Makefile`:
+
+1. Add `scripts` section to `composer.json`:
+
+   ```json
+   {
+       "scripts": {
+           "cs-fix": "php vendor/bin/php-cs-fixer fix -v",
+           "cs-diff": "php vendor/bin/php-cs-fixer fix --dry-run -v --diff"
+       }
+   }
+   ```
+
+2. Use `Makefile` code to run PHP-CS-Fixer tests:
+
+   ```bash
+   # Run inspections and fix code
+   $ make cs-fix
+
+   # Check coding standards without applying the fix
+   $ make cs-diff
+   ```
 
 <br>
 
@@ -80,3 +144,10 @@ Created in **2022** by [lotyp / wayofdev](https://github.com/wayofdev)
 
 <br>
 
+## 🧱 Resources
+
+* Full documentation about all fixers are available here - [PHP-CS-Fixer configuration UI](https://mlocati.github.io/php-cs-fixer-configurator/#version:3.0)
+
+* The official [PHP-CS-Fixer documentation](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+
+<br>
