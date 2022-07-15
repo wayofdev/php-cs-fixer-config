@@ -7,6 +7,8 @@ namespace WayOfDev\PhpCsFixer\Config\RuleSets;
 use PhpCsFixer\Fixer\FunctionNotation\NativeFunctionInvocationFixer;
 use WayOfDev\PhpCsFixer\Config\RuleSet;
 
+use function array_merge;
+
 final class DefaultSet implements RuleSet
 {
     public function __construct(private readonly array $rules = [])

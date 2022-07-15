@@ -11,6 +11,10 @@ use SplFileInfo;
 use WayOfDev\PhpCsFixer\Config\ConfigBuilder;
 use WayOfDev\PhpCsFixer\Config\RuleSets\DefaultSet;
 
+use function array_diff_assoc;
+use function array_map;
+use function realpath;
+
 final class ConfigBuilderTest extends TestCase
 {
     private ConfigBuilder $builder;
@@ -132,7 +136,6 @@ final class ConfigBuilderTest extends TestCase
         $map = static function (SplFileInfo $info): string {
             return $info->getRealPath();
         };
-
 
         return array_map($map, [...$finder]);
     }
