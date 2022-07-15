@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.0.0...v1.0.1) (2022-07-15)
+
+
+### Documentation
+
+* adding readme ([e619628](https://github.com/wayofdev/php-cs-fixer-config/commit/e619628c65a78459ea0065d1bc30777965864a66))
+
 ## 1.0.0 (2022-07-15)
 
 
