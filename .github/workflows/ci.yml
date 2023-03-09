@@ -47,6 +47,8 @@ jobs:
 
       - name: 🚨 Run coding standards task
         run: make cs-diff
+        env:
+          PHP_CS_FIXER_IGNORE_ENV: true
 
       - name: 🧪 Execute phpunit tests
         run: make test
