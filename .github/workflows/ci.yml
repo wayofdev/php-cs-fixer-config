@@ -51,7 +51,7 @@ jobs:
           PHP_CS_FIXER_IGNORE_ENV: true
 
       - name: 🧪 Execute phpunit tests
-        uses: php-actions/phpunit@v3
+        uses: php-actions/phpunit@v9
         env:
           XDEBUG_MODE: coverage
         with:
