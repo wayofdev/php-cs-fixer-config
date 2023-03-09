@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.0.1...v1.0.2) (2022-08-16)
+
+
+### Documentation
+
+* readme updates, badges, CoC, fixes in phpunit cache ([d26e75a](https://github.com/wayofdev/php-cs-fixer-config/commit/d26e75a312e41425d6fb567bb8fae080c23fce97))
+
 ## [1.0.1](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.0.0...v1.0.1) (2022-07-15)
 
 
