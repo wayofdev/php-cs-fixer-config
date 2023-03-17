@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.0...v1.1.1) (2023-03-17)
+
+
+### Miscellaneous
+
+* **deps:** update dependency phpstan/phpstan-deprecation-rules to v1.1.3 ([10b4d1f](https://github.com/wayofdev/php-cs-fixer-config/commit/10b4d1f91c714b0bd0471bdfacc4f8b25dcc52ae))
+
 ## [1.1.0](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.0.2...v1.1.0) (2023-03-17)
 
 
