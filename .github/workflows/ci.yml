@@ -12,7 +12,6 @@ name: 🔍 Continuous integration
 
 jobs:
   integration:
-    name: 🧪 Testing on PHP ${{ matrix.php }} - ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true
