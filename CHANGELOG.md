@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.1...v1.1.2) (2023-03-20)
+
+
+### Miscellaneous
+
+* **deps:** update dependency phpunit/phpunit to v10.0.17 ([2d95eb9](https://github.com/wayofdev/php-cs-fixer-config/commit/2d95eb90fecc8e41160320b57eb10e3bf2aed8c9))
+
 ## [1.1.1](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.0...v1.1.1) (2023-03-17)
 
 
