@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.3...v1.1.4) (2023-03-23)
+
+
+### Miscellaneous
+
+* **deps:** update peter-evans/enable-pull-request-automerge action to v3 ([adcda3f](https://github.com/wayofdev/php-cs-fixer-config/commit/adcda3fce3648ece5dbed1f8fbdfdb485861c77c))
+
 ## [1.1.3](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.2...v1.1.3) (2023-03-22)
 
 
