@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.6](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.5...v1.1.6) (2023-03-25)
+
+
+### Miscellaneous
+
+* **deps:** update dependency phpstan/phpstan-phpunit to v1.3.11 ([21de373](https://github.com/wayofdev/php-cs-fixer-config/commit/21de3739eaea109904f5ae9432a8b5830d95bb3d))
+
 ## [1.1.5](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.4...v1.1.5) (2023-03-24)
 
 
