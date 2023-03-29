@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.8](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.7...v1.1.8) (2023-03-29)
+
+
+### Miscellaneous
+
+* **deps:** update dependency phpstan/phpstan-strict-rules to v1.5.1 ([aea5b20](https://github.com/wayofdev/php-cs-fixer-config/commit/aea5b20ebb23caa1e0c8cd6368d3661b860272cc))
+
 ## [1.1.7](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.6...v1.1.7) (2023-03-27)
 
 
