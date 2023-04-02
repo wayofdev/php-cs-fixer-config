@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.11](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.10...v1.1.11) (2023-04-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency friendsofphp/php-cs-fixer to v3.16.0 ([f6e8131](https://github.com/wayofdev/php-cs-fixer-config/commit/f6e8131d50593ef97d4132a47ec85762ab8377b3))
+
 ## [1.1.10](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.9...v1.1.10) (2023-04-01)
 
 
