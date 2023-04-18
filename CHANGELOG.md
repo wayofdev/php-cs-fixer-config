@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.17](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.16...v1.1.17) (2023-04-18)
+
+
+### Miscellaneous
+
+* **deps:** update dependency phpstan/extension-installer to v1.3.0 ([3cac3eb](https://github.com/wayofdev/php-cs-fixer-config/commit/3cac3eb8474ba1bb35b71e936a25c1dabce2ce98))
+
 ## [1.1.16](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.15...v1.1.16) (2023-04-17)
 
 
