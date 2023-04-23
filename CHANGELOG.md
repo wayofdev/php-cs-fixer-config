@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.19...v1.2.0) (2023-04-23)
+
+
+### Features
+
+* add rules ([7f5eea4](https://github.com/wayofdev/php-cs-fixer-config/commit/7f5eea49830497a5811306c4dc14830b389e5a97))
+
+
+### Miscellaneous
+
+* apply cs-fix ([e3faa99](https://github.com/wayofdev/php-cs-fixer-config/commit/e3faa990485c1815ec5b6fd77d63fb82e30f7753))
+
 ## [1.1.19](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.1.18...v1.1.19) (2023-04-22)
 
 
