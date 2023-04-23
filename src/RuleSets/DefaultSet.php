@@ -142,7 +142,6 @@ final class DefaultSet implements RuleSet
 
             'no_useless_else' => true,
             'no_useless_return' => true,
-
         ], $this->rules);
     }
 }
