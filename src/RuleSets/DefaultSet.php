@@ -139,6 +139,9 @@ final class DefaultSet implements RuleSet
                 'import_constants' => true,
             ],
             'self_static_accessor' => true,
+
+            'no_useless_else' => true,
+            'no_useless_return' => true,
         ], $this->rules);
     }
 }
