@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.17](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.16...v1.2.17) (2023-06-21)
+
+
+### Miscellaneous
+
+* **deps:** update dependency phpstan/phpstan to v1.10.21 ([776a6c6](https://github.com/wayofdev/php-cs-fixer-config/commit/776a6c6e8a93a670cdb4fea06084d1363d2dd3cd))
+
 ## [1.2.16](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.15...v1.2.16) (2023-06-20)
 
 
