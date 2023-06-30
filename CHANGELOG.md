@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.23](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.22...v1.2.23) (2023-06-30)
+
+
+### Miscellaneous
+
+* **deps:** update dependency ergebnis/composer-normalize to v2.32.0 ([d0b6bc0](https://github.com/wayofdev/php-cs-fixer-config/commit/d0b6bc0832ac3d27106be254c1798ceb3c43497d))
+
 ## [1.2.22](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.21...v1.2.22) (2023-06-30)
 
 
