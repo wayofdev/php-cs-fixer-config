@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.40](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.39...v1.2.40) (2023-08-05)
+
+
+### Miscellaneous
+
+* **deps:** update phpstan packages ([2457e70](https://github.com/wayofdev/php-cs-fixer-config/commit/2457e708fe9141fe76fd1161d2022bb77c78ddb5))
+
 ## [1.2.39](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.38...v1.2.39) (2023-08-04)
 
 
