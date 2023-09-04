@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.54](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.53...v1.2.54) (2023-09-04)
+
+
+### Miscellaneous
+
+* **deps:** update actions/checkout action to v4 ([295fc25](https://github.com/wayofdev/php-cs-fixer-config/commit/295fc259f66190af861a5a11b05968dc65df08b0))
+
 ## [1.2.53](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.52...v1.2.53) (2023-09-04)
 
 
