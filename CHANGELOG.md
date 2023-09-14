@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.61](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.60...v1.2.61) (2023-09-14)
+
+
+### Miscellaneous
+
+* **deps:** update codecov/codecov-action action to v4 ([b7bf9b5](https://github.com/wayofdev/php-cs-fixer-config/commit/b7bf9b5b1836b0e6c3e16cb5c1dc0fa79df8730b))
+
 ## [1.2.60](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.59...v1.2.60) (2023-09-13)
 
 
