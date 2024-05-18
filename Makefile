@@ -81,7 +81,7 @@ else
 	WHITE := ""
 	RST := ""
 endif
-MAKE_LOGFILE = /tmp/buggregator-trap.log
+MAKE_LOGFILE = /tmp/wayofdev-php-cs-fixer-config.log
 MAKE_CMD_COLOR := $(BLUE)
 
 default: all
