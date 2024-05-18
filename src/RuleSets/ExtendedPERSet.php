@@ -43,9 +43,6 @@ final class ExtendedPERSet implements RuleSet
             /*
              * @Symfony
              */
-            'php_unit_method_casing' => [
-                'case' => 'snake_case',
-            ],
             'phpdoc_align' => [
                 'align' => 'left',
             ],
@@ -72,9 +69,6 @@ final class ExtendedPERSet implements RuleSet
             /*
              * @Symfony:risky
              */
-            'php_unit_test_annotation' => [
-                'style' => 'annotation',
-            ],
             'native_function_invocation' => [
                 'include' => [
                     NativeFunctionInvocationFixer::SET_INTERNAL,
