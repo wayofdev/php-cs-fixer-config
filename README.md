@@ -1,11 +1,9 @@
 <br>
 
 <div align="center">
-<img width="456" src="https://raw.githubusercontent.com/wayofdev/php-cs-fixer-config/master/assets/logo.gh-light-mode-only.png#gh-light-mode-only">
-<img width="456" src="https://raw.githubusercontent.com/wayofdev/php-cs-fixer-config/master/assets/logo.gh-dark-mode-only.png#gh-dark-mode-only">
+<img alt="Logo for Light Theme" width="456" src="https://raw.githubusercontent.com/wayofdev/php-cs-fixer-config/master/assets/logo.gh-light-mode-only.png#gh-light-mode-only">
+<img alt="Logo for Dark Theme" width="456" src="https://raw.githubusercontent.com/wayofdev/php-cs-fixer-config/master/assets/logo.gh-dark-mode-only.png#gh-dark-mode-only">
 </div>
-
-
 
 <br>
 
@@ -36,7 +34,7 @@ If you **like/use** this package, please consider **starring** it. Thanks!
 Require as dependency:
 
 ```bash
-$ composer req wayofdev/cs-fixer-config
+composer req wayofdev/cs-fixer-config
 ```
 
 <br>
@@ -75,7 +73,7 @@ $ composer req wayofdev/cs-fixer-config
 Fix coding standards by simply running console command:
 
 ```bash
-$ php vendor/bin/php-cs-fixer fix -v
+php vendor/bin/php-cs-fixer fix -v
 ```
 
 ### → Using Makefile
@@ -112,7 +110,7 @@ To use with our `Makefile`:
 To run tests, run the following command:
 
 ```bash
-$ make test
+make test
 ```
 
 ### → Static Analysis
@@ -120,7 +118,7 @@ $ make test
 Code quality using PHPStan:
 
 ```bash
-$ make stan
+make stan
 ```
 
 ### → Coding Standards Fixing
@@ -128,7 +126,7 @@ $ make stan
 Fix code using The PHP Coding Standards Fixer (PHP CS Fixer) to follow our standards:
 
 ```bash
-$ make cs-fix
+make cs-fix
 ```
 
 <br>

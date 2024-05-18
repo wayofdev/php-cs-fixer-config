@@ -28,6 +28,8 @@ final class ConfigBuilder
     }
 
     /**
+     * @param array<mixed> $arguments
+     *
      * @throws BadMethodCallException
      */
     public function __call(string $name, array $arguments): self
@@ -50,6 +52,9 @@ final class ConfigBuilder
         return $this;
     }
 
+    /**
+     * @param array<mixed> $files
+     */
     public function addFiles(array $files): self
     {
         $this->getFinder()->append($files);

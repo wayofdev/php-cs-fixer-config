@@ -11,6 +11,9 @@ use function array_merge;
 
 final class DefaultSet implements RuleSet
 {
+    /**
+     * @param array<string, array<string, mixed>|bool> $rules
+     */
     public function __construct(private readonly array $rules = [])
     {
     }
