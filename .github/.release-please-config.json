@@ -2,7 +2,7 @@
     "release-type": "php",
     "packages": {
         ".": {
-            "package-name": "laravel-package-tpl",
+            "package-name": "php-cs-fixer-config",
             "changelog-path": "/CHANGELOG.md"
         }
     },
