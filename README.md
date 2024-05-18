@@ -1,21 +1,25 @@
-<br>
-
 <div align="center">
-<img alt="Logo for Light Theme" width="456" src="https://raw.githubusercontent.com/wayofdev/php-cs-fixer-config/master/assets/logo.gh-light-mode-only.png#gh-light-mode-only">
-<img alt="Logo for Dark Theme" width="456" src="https://raw.githubusercontent.com/wayofdev/php-cs-fixer-config/master/assets/logo.gh-dark-mode-only.png#gh-dark-mode-only">
+    <br>
+    <a href="https://wayof.dev" target="_blank">
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wayofdev/.github/master/assets/logo.gh-dark-mode-only.png">
+            <img width="400" src="https://raw.githubusercontent.com/wayofdev/.github/master/assets/logo.gh-light-mode-only.png" alt="WayOfDev Logo">
+        </picture>
+    </a>
+    <br>
+    <br>
 </div>
 
-<br>
-
-<br>
-
-<div align="center">
-<a href="https://github.com/wayofdev/php-cs-fixer-config/actions"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwayofdev%2Fphp-cs-fixer-config%2Fbadge&style=flat-square"/></a>
-<a href="https://packagist.org/packages/wayofdev/cs-fixer-config"><img src="https://img.shields.io/packagist/dt/wayofdev/cs-fixer-config?&style=flat-square" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/wayofdev/cs-fixer-config"><img src="https://img.shields.io/packagist/v/wayofdev/cs-fixer-config?&style=flat-square" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/wayofdev/cs-fixer-config"><img src="https://img.shields.io/packagist/l/wayofdev/cs-fixer-config?style=flat-square&color=blue" alt="Software License"/></a>
-<a href="https://packagist.org/packages/wayofdev/cs-fixer-config"><img alt="Commits since latest release" src="https://img.shields.io/github/commits-since/wayofdev/php-cs-fixer-config/latest?style=flat-square"></a>
-</div>
+<p align="center">
+<a href="https://github.com/wayofdev/php-cs-fixer-config/actions" target="_blank"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwayofdev%2Fphp-cs-fixer-config%2Fbadge&style=flat-square&label=github%20actions"/></a>
+<a href="https://packagist.org/packages/wayofdev/php-cs-fixer-config" target="_blank"><img src="https://img.shields.io/packagist/dt/wayofdev/cs-fixer-config?&style=flat-square" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/wayofdev/php-cs-fixer-config" target="_blank"><img src="https://img.shields.io/packagist/v/wayofdev/cs-fixer-config?&style=flat-square" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/wayofdev/php-cs-fixer-config" target="_blank"><img alt="Commits since latest release" src="https://img.shields.io/github/commits-since/wayofdev/php-cs-fixer-config/latest?style=flat-square"></a>
+<a href="https://packagist.org/packages/wayofdev/php-cs-fixer-config" target="_blank"><img alt="PHP Version Require" src="https://poser.pugx.org/wayofdev/cs-fixer-config/require/php?style=flat-square"></a>
+<a href="https://app.codecov.io/gh/wayofdev/php-cs-fixer-config" target="_blank"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/wayofdev/php-cs-fixer-config?style=flat-square&logo=codecov"></a>
+<a href="https://dashboard.stryker-mutator.io/reports/github.com/wayofdev/php-cs-fixer-config/master" target="_blank"><img alt="Mutation testing badge" src="https://img.shields.io/endpoint?style=flat-square&label=mutation%20score&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fwayofdev%2Fphp-cs-fixer-config%2Fmaster"></a>
+<a href=""><img src="https://img.shields.io/badge/phpstan%20level-9%20of%209-brightgreen?style=flat-square" alt="PHP Stan Level 9 of 9"></a>
+</p>
 
 <br>
 
@@ -96,7 +100,7 @@ To use with our `Makefile`:
    ```bash
    # Run inspections and fix code
    $ make cs-fix
-
+   
    # Check coding standards without applying the fix
    $ make cs-diff
    ```
@@ -131,15 +135,44 @@ make cs-fix
 
 <br>
 
-## 🤝 License
+## 🔒 Security Policy
 
-[![Licence](https://img.shields.io/github/license/wayofdev/php-cs-fixer-config?style=for-the-badge&color=blue)](./LICENSE)
+This project has a [security policy](.github/SECURITY.md).
 
 <br>
 
-## 🙆🏼‍♂️ Author Information
+## 🙌 Want to Contribute?
 
-Created in **2022** by [lotyp / wayofdev](https://github.com/wayofdev)
+Thank you for considering contributing to the wayofdev community! We are open to all kinds of contributions. If you want to:
+
+- 🤔 [Suggest a feature](https://github.com/wayofdev/php-cs-fixer-config/issues/new?assignees=&labels=type%3A+enhancement&projects=&template=2-feature-request.yml&title=%5BFeature%5D%3A+)
+- 🐛 [Report an issue](https://github.com/wayofdev/php-cs-fixer-config/issues/new?assignees=&labels=type%3A+documentation%2Ctype%3A+maintenance&projects=&template=1-bug-report.yml&title=%5BBug%5D%3A+)
+- 📖 [Improve documentation](https://github.com/wayofdev/php-cs-fixer-config/issues/new?assignees=&labels=type%3A+documentation%2Ctype%3A+maintenance&projects=&template=4-docs-bug-report.yml&title=%5BDocs%5D%3A+)
+- 👨‍💻 Contribute to the code
+
+You are more than welcome. Before contributing, kindly check our [contribution guidelines](.github/CONTRIBUTING.md).
+
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge)](https://conventionalcommits.org)
+
+<br>
+
+## 🫡 Contributors
+
+<a href="https://github.com/wayofdev/php-cs-fixer-config/graphs/contributors">
+    <img align="left" src="https://img.shields.io/github/contributors-anon/wayofdev/php-cs-fixer-config?style=for-the-badge" alt="Contributors Badge"/>
+</a>
+
+<br>
+
+## 🌐 Social Links
+
+- **Twitter:** Follow our organization [@wayofdev](https://twitter.com/intent/follow?screen_name=wayofdev) and the author [@wlotyp](https://twitter.com/intent/follow?screen_name=wlotyp).
+- **Discord:** Join our community on [Discord](https://discord.gg/CE3TcCC5vr).
+
+<p align="left">
+<a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Codecov" src="https://img.shields.io/discord/1228506758562058391?style=for-the-badge&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
+<a href="https://x.com/intent/follow?screen_name=wayofdev" target="_blank"><img alt="Follow on Twitter (X)" src="https://img.shields.io/badge/-Follow-black?style=for-the-badge&logo=X"></a>
+</p>
 
 <br>
 
@@ -148,5 +181,11 @@ Created in **2022** by [lotyp / wayofdev](https://github.com/wayofdev)
 * Full documentation about all fixers are available here - [PHP-CS-Fixer configuration UI](https://mlocati.github.io/php-cs-fixer-configurator/#version:3.0)
 
 * The official [PHP-CS-Fixer documentation](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+
+<br>
+
+## ⚖️ License
+
+[![Licence](https://img.shields.io/github/license/wayofdev/php-cs-fixer-config?style=for-the-badge&color=blue)](./LICENSE.md)
 
 <br>
