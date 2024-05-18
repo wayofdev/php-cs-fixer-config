@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
 
       - name: 🐞 Differential shell-check
-        uses: redhat-plumbers-in-action/differential-shellcheck@v4
+        uses: redhat-plumbers-in-action/differential-shellcheck@v5
         with:
           severity: warning
           token: ${{ secrets.GITHUB_TOKEN }}
