@@ -103,34 +103,34 @@ composer req --dev wayofdev/cs-fixer-config
 
 ### → Makefile
 
-* If you are using [`Makefile`](https://www.gnu.org/software/make/manual/make.html#Introduction), create a `Makefile` with a `lint-php` and `lint-diff` targets:
+- If you are using [`Makefile`](https://www.gnu.org/software/make/manual/make.html#Introduction), create a `Makefile` with a `lint-php` and `lint-diff` targets:
 
   ```diff
   +APP_RUNNER ?= php
   +APP_COMPOSER ?= $(APP_RUNNER) composer
   +
   +prepare:
-  +		mkdir -p .build/php-cs-fixer
+  +  mkdir -p .build/php-cs-fixer
   +.PHONY: prepare
   
   +lint-php: prepare ## Fixes code to follow coding standards using php-cs-fixer
-  + 	$(APP_COMPOSER) cs:fix
+  +  $(APP_COMPOSER) cs:fix
   +.PHONY: lint-php
   
   +lint-diff: prepare ## Runs php-cs-fixer in dry-run mode and shows diff which will by applied
-  + 	$(APP_COMPOSER) cs:diff
+  +  $(APP_COMPOSER) cs:diff
   +.PHONY: lint-diff
   ```
 
-​	Or, you can check for one of our pre-configured `Makefile` from any of these repositories:
+​ Or, you can check for one of our pre-configured `Makefile` from any of these repositories:
 
-​	https://github.com/wayofdev/php-cs-fixer-config/blob/master/Makefile
+​ <https://github.com/wayofdev/php-cs-fixer-config/blob/master/Makefile>
 
-​	https://github.com/wayofdev/laravel-package-tpl/blob/master/Makefile
+​ <https://github.com/wayofdev/laravel-package-tpl/blob/master/Makefile>
 
 ### → GitHub Actions
 
-+ To use this package in [GitHub Actions](https://github.com/features/actions), add a `coding-standards.yml` workflow to your repository:
+- To use this package in [GitHub Actions](https://github.com/features/actions), add a `coding-standards.yml` workflow to your repository:
 
   ```yaml
   ---
@@ -219,9 +219,9 @@ composer req --dev wayofdev/cs-fixer-config
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   ```
 
-​	Or, you can check for one of our pre-configured workflows from any of these repositories:
+​ Or, you can check for one of our pre-configured workflows from any of these repositories:
 
-​	https://github.com/wayofdev/php-cs-fixer-config/blob/master/.github/workflows/coding-standards.yml
+​ <https://github.com/wayofdev/php-cs-fixer-config/blob/master/.github/workflows/coding-standards.yml>
 
 <br>
 
