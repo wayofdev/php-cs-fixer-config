@@ -3,6 +3,17 @@
     "description": "Package adds custom rule-sets to php-cs-fixer",
     "license": "MIT",
     "type": "library",
+    "keywords": [
+        "php-cs-fixer",
+        "php-cs-fixer-config",
+        "php-cs-fixer-rules",
+        "configuration",
+        "code-style",
+        "code-standards",
+        "code-quality",
+        "php",
+        "static-analysis"
+    ],
     "authors": [
         {
             "name": "Andrij Orlenko",
