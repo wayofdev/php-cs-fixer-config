@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.0](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.61...v1.3.0) (2024-05-18)
+
+
+### Features
+
+* attribute_empty_parentheses, phpdoc_line_span class_attributes_separation rules ([4bcdc19](https://github.com/wayofdev/php-cs-fixer-config/commit/4bcdc19538df033532c63546914824e282c343a5))
+* config set based on PER-CS2.0 ([bbbd5a5](https://github.com/wayofdev/php-cs-fixer-config/commit/bbbd5a587c30c13f202a4cb93a99e0524c6b4ade))
+* update default set rule sets ([05611b2](https://github.com/wayofdev/php-cs-fixer-config/commit/05611b228bab587022da1671d50cccd510c3ac58))
+
+
+### Bug Fixes
+
+* remoe php_unit annotation and snake_case in PER ruleset ([c0bb78e](https://github.com/wayofdev/php-cs-fixer-config/commit/c0bb78ed99c19d3fab5beb9563b811d0dad5d26c))
+
 ## [1.2.61](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.60...v1.2.61) (2023-09-14)
 
 
