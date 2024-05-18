@@ -9,7 +9,7 @@ use WayOfDev\PhpCsFixer\Config\RuleSet;
 
 use function array_merge;
 
-final class DefaultSet implements RuleSet
+final class ExtendedPERSet implements RuleSet
 {
     public function __construct(private readonly array $rules = [])
     {
@@ -17,7 +17,7 @@ final class DefaultSet implements RuleSet
 
     public function name(): string
     {
-        return 'wayofdev';
+        return 'ExtendedPER';
     }
 
     public function allowRisky(): bool
@@ -34,35 +34,61 @@ final class DefaultSet implements RuleSet
     {
         return array_merge([
             /*
-             * Base our RuleSet on @Symfony RuleSet
-             * https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/ruleSets/Symfony.rst
-             * https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/src/RuleSet/Sets/SymfonySet.php
+             * Base our RuleSet on PER-CS2.0 Ruleset
+             * https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/doc/ruleSets/PER-CS2.0.rst
+             * https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/src/RuleSet/Sets/PERCS2x0Set.php
              */
-            '@Symfony' => true,
+            '@PER-CS2.0' => true,
 
             /*
-             * @Symfony overrides
+             * @Symfony
              */
-            'concat_space' => [
-                'spacing' => 'one',
-            ],
-            'method_argument_space' => [
-                'on_multiline' => 'ensure_fully_multiline',
-                'attribute_placement' => 'same_line',
-                'after_heredoc' => true, // @PHP73Migration
-            ],
-            'php_unit_method_casing' => [
-                'case' => 'snake_case',
+            'phpdoc_align' => [
+                'align' => 'left',
             ],
             'yoda_style' => [
                 'equal' => false,
                 'identical' => false,
                 'less_and_greater' => false,
             ],
-            'phpdoc_align' => [
-                'align' => 'left',
+            'align_multiline_comment' => true,
+            'single_line_throw' => false,
+            'phpdoc_order' => [
+                'order' => [
+                    'param',
+                    'return',
+                    'throws',
+                ],
+            ],
+            'global_namespace_import' => [
+                'import_classes' => false,
+                'import_functions' => false,
+                'import_constants' => false,
+            ],
+            'class_attributes_separation' => [
+                'elements' => [
+                    'const' => 'one',
+                    'method' => 'one',
+                    'property' => 'one',
+                    'trait_import' => 'none',
+                ],
             ],
 
+            /*
+             * @Symfony:risky
+             */
+            'native_function_invocation' => [
+                'include' => [
+                    NativeFunctionInvocationFixer::SET_INTERNAL,
+                    NativeFunctionInvocationFixer::SET_COMPILER_OPTIMIZED,
+                ],
+                'scope' => 'namespaced',
+                'strict' => true,
+            ],
+
+            /*
+             * @PER-CS2.0 overrides
+             */
             'ordered_class_elements' => [
                 'sort_algorithm' => 'none',
                 'order' => [
@@ -90,31 +116,28 @@ final class DefaultSet implements RuleSet
                     'destruct',
                 ],
             ],
-            'global_namespace_import' => [
-                'import_classes' => true,
-                'import_functions' => true,
-                'import_constants' => true,
-            ],
-            'class_attributes_separation' => [
-                'elements' => [
-                    'const' => 'one',
-                    'method' => 'one',
-                    'property' => 'one',
-                    'trait_import' => 'none',
-                ],
+            'method_argument_space' => [
+                'on_multiline' => 'ensure_fully_multiline',
+                'attribute_placement' => 'same_line',
+                'after_heredoc' => true,  // @PHP73Migration
             ],
 
             /*
-             * @Symfony:risky overrides
+             * @PhpCsFixer
              */
-            'native_function_invocation' => [
-                'include' => [
-                    NativeFunctionInvocationFixer::SET_INTERNAL,
-                    NativeFunctionInvocationFixer::SET_COMPILER_OPTIMIZED,
-                ],
-                'scope' => 'namespaced',
-                'strict' => true,
+            'method_chaining_indentation' => true,
+            'phpdoc_var_annotation_correct_order' => true,
+            'phpdoc_add_missing_param_annotation' => [
+                'only_untyped' => true,
             ],
+            'multiline_comment_opening_closing' => true,
+            'self_static_accessor' => true,
+            'no_useless_else' => true,
+
+            /*
+             * @PhpCsFixer:risky
+             */
+            'static_lambda' => true,
 
             /*
              * @PHP**MigrationSet
@@ -132,33 +155,9 @@ final class DefaultSet implements RuleSet
             'void_return' => true,
 
             /*
-             * @PhpCsFixer
-             */
-            'single_line_throw' => false,
-            'explicit_indirect_variable' => true,
-            'method_chaining_indentation' => true,
-            'phpdoc_var_annotation_correct_order' => true,
-            'phpdoc_add_missing_param_annotation' => [
-                'only_untyped' => true,
-            ],
-            'multiline_comment_opening_closing' => true,
-            'self_static_accessor' => true,
-            'no_useless_else' => true,
-            'no_useless_return' => true,
-
-            /*
-             * @PhpCsFixer:risky
-             */
-            'static_lambda' => true,
-            'php_unit_test_annotation' => [
-                'style' => 'annotation',
-            ],
-
-            /*
              * Rules without presets
              */
             'phpdoc_tag_casing' => true,
-            'not_operator_with_successor_space' => true,
             'attribute_empty_parentheses' => [
                 'use_parentheses' => false,
             ],
