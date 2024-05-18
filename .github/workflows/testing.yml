@@ -23,7 +23,7 @@ jobs:
         os:
           - ubuntu-latest
         php-version:
-          - '8.2'
+          - '8.1'
         dependencies:
           - locked
     steps:
