@@ -65,6 +65,14 @@ final class ExtendedPERSet implements RuleSet
                 'import_functions' => false,
                 'import_constants' => false,
             ],
+            'class_attributes_separation' => [
+                'elements' => [
+                    'const' => 'one',
+                    'method' => 'one',
+                    'property' => 'one',
+                    'trait_import' => 'none',
+                ],
+            ],
 
             /*
              * @Symfony:risky
@@ -150,6 +158,14 @@ final class ExtendedPERSet implements RuleSet
              * Rules without presets
              */
             'phpdoc_tag_casing' => true,
+            'attribute_empty_parentheses' => [
+                'use_parentheses' => false,
+            ],
+            'phpdoc_line_span' => [
+                'const' => 'multi',
+                'method' => 'multi',
+                'property' => 'multi',
+            ],
         ], $this->rules);
     }
 }

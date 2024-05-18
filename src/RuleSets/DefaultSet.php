@@ -95,6 +95,14 @@ final class DefaultSet implements RuleSet
                 'import_functions' => true,
                 'import_constants' => true,
             ],
+            'class_attributes_separation' => [
+                'elements' => [
+                    'const' => 'one',
+                    'method' => 'one',
+                    'property' => 'one',
+                    'trait_import' => 'none',
+                ],
+            ],
 
             /*
              * @Symfony:risky overrides
@@ -151,6 +159,14 @@ final class DefaultSet implements RuleSet
              */
             'phpdoc_tag_casing' => true,
             'not_operator_with_successor_space' => true,
+            'attribute_empty_parentheses' => [
+                'use_parentheses' => false,
+            ],
+            'phpdoc_line_span' => [
+                'const' => 'multi',
+                'method' => 'multi',
+                'property' => 'multi',
+            ],
         ], $this->rules);
     }
 }
