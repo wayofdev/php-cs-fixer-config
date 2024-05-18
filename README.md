@@ -121,13 +121,13 @@ vendor/bin/php-cs-fixer fix -v
 
 To use via composer script commands:
 
-* Fixes code to follow coding standards using php-cs-fixer:
+- Fixes code to follow coding standards using php-cs-fixer:
 
   ```bash
   composer cs:diff
   ```
 
-* Runs php-cs-fixer in dry-run mode and shows diff which will by applied:
+- Runs php-cs-fixer in dry-run mode and shows diff which will by applied:
 
   ```bash
   composer cs:fix
@@ -148,7 +148,6 @@ To use via composer script commands:
   ```bash
   make lint-diff 
   ```
-
 
 <br>
 
