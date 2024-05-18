@@ -101,9 +101,127 @@ composer req --dev wayofdev/cs-fixer-config
    /vendor/
   ```
 
+### → Makefile
+
+* If you are using [`Makefile`](https://www.gnu.org/software/make/manual/make.html#Introduction), create a `Makefile` with a `lint-php` and `lint-diff` targets:
+
+  ```diff
+  +APP_RUNNER ?= php
+  +APP_COMPOSER ?= $(APP_RUNNER) composer
+  +
+  +prepare:
+  +		mkdir -p .build/php-cs-fixer
+  +.PHONY: prepare
+  
+  +lint-php: prepare ## Fixes code to follow coding standards using php-cs-fixer
+  + 	$(APP_COMPOSER) cs:fix
+  +.PHONY: lint-php
+  
+  +lint-diff: prepare ## Runs php-cs-fixer in dry-run mode and shows diff which will by applied
+  + 	$(APP_COMPOSER) cs:diff
+  +.PHONY: lint-diff
+  ```
+
+​	Or, you can check for one of our pre-configured `Makefile` from any of these repositories:
+
+​	https://github.com/wayofdev/php-cs-fixer-config/blob/master/Makefile
+
+​	https://github.com/wayofdev/laravel-package-tpl/blob/master/Makefile
+
 ### → GitHub Actions
 
-To use in GitHub Actions, do...
++ To use this package in [GitHub Actions](https://github.com/features/actions), add a `coding-standards.yml` workflow to your repository:
+
+  ```yaml
+  ---
+  
+  on:  # yamllint disable-line rule:truthy
+    pull_request:
+      branches:
+        - master
+    push:
+      branches:
+        - master
+  
+  name: 🧹 Fix PHP coding standards
+  
+  jobs:
+    coding-standards:
+      timeout-minutes: 4
+      runs-on: ${{ matrix.os }}
+      concurrency:
+        cancel-in-progress: true
+        group: coding-standards-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+      strategy:
+        matrix:
+          os:
+            - ubuntu-latest
+          php-version:
+            - '8.1'
+          dependencies:
+            - locked
+      permissions:
+        contents: write
+      steps:
+        - name: ⚙️ Set git to use LF line endings
+          run: |
+            git config --global core.autocrlf false
+            git config --global core.eol lf
+  
+        - name: 🛠️ Setup PHP
+          uses: shivammathur/setup-php@2.30.4
+          with:
+            php-version: ${{ matrix.php-version }}
+            extensions: none, ctype, dom, json, mbstring, phar, simplexml, tokenizer, xml, xmlwriter
+            ini-values: error_reporting=E_ALL
+            coverage: none
+  
+        - name: 📦 Check out the codebase
+          uses: actions/checkout@v4.1.5
+  
+        - name: 🛠️ Setup problem matchers
+          run: |
+            echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+  
+        - name: 🤖 Validate composer.json and composer.lock
+          run: composer validate --ansi --strict
+  
+        - name: 🔍 Get composer cache directory
+          uses: wayofdev/gh-actions/actions/composer/get-cache-directory@v3.1.0
+  
+        - name: ♻️ Restore cached dependencies installed with composer
+          uses: actions/cache@v4.0.2
+          with:
+            path: ${{ env.COMPOSER_CACHE_DIR }}
+            key: php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}
+            restore-keys: php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-
+  
+        - name: 📥 Install "${{ matrix.dependencies }}" dependencies with composer
+          uses: wayofdev/gh-actions/actions/composer/install@v3.1.0
+          with:
+            dependencies: ${{ matrix.dependencies }}
+  
+        - name: 🛠️ Prepare environment
+          run: make prepare
+  
+        - name: 🚨 Run coding standards task
+          run: composer cs:fix
+          env:
+            PHP_CS_FIXER_IGNORE_ENV: true
+  
+        - name: 📤 Commit and push changed files back to GitHub
+          uses: stefanzweifel/git-auto-commit-action@v5.0.1
+          with:
+            commit_message: 'style(php-cs-fixer): lint php files and fix coding standards'
+            branch: ${{ github.head_ref }}
+            commit_author: 'github-actions <github-actions@users.noreply.github.com>'
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  ```
+
+​	Or, you can check for one of our pre-configured workflows from any of these repositories:
+
+​	https://github.com/wayofdev/php-cs-fixer-config/blob/master/.github/workflows/coding-standards.yml
 
 <br>
 
