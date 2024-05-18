@@ -27,7 +27,13 @@
 
 Wrapper with pre-defined rules around the [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) package — A tool to automatically fix PHP Coding Standards issues.
 
-If you **like/use** this package, please consider **starring** it. Thanks!
+This repository aims to provide a standardized way to apply coding standards across multiple projects, ensuring consistency and adherence to best practices.
+
+By using predefined rulesets, it simplifies the setup process and allows teams to quickly integrate PHP-CS-Fixer into their development workflow.
+
+<br>
+
+If you **like/use** this package, please consider ⭐️ **starring** it. Thanks!
 
 <br>
 
@@ -38,100 +44,110 @@ If you **like/use** this package, please consider **starring** it. Thanks!
 Require as dependency:
 
 ```bash
-composer req wayofdev/cs-fixer-config
+composer req --dev wayofdev/cs-fixer-config
 ```
 
 <br>
 
 ## 🛠 Configuration
 
-1. Create PHP file and name it `.php-cs-fixer.dist.php` and place it inside root directory of project. It will be recognized by PHP CS Fixer automatically.
+### → Setup
 
-2. Example contents of `.php-cs-fixer.dist.php` file:
+- Create PHP file and name it `.php-cs-fixer.dist.php` and place it inside root directory of project. It will be recognized by PHP CS Fixer automatically.
+
+- Example contents of `.php-cs-fixer.dist.php` file:
 
    ```php
-   <?php
-
-   declare(strict_types=1);
-
-   use WayOfDev\PhpCsFixer\Config\ConfigBuilder;
-   use WayOfDev\PhpCsFixer\Config\RuleSets\DefaultSet;
-
-   require_once 'vendor/autoload.php';
-
-   return ConfigBuilder::createFromRuleSet(new DefaultSet())
-       ->inDir(__DIR__ . '/src')
-       ->inDir(__DIR__ . '/tests')
-       ->addFiles([__FILE__])
-       ->getConfig();
+    <?php
+    
+    declare(strict_types=1);
+    
+    use WayOfDev\PhpCsFixer\Config\ConfigBuilder;
+    use WayOfDev\PhpCsFixer\Config\RuleSets\DefaultSet;
+    
+    require_once 'vendor/autoload.php';
+    
+    $config = ConfigBuilder::createFromRuleSet(new DefaultSet())
+        ->inDir(__DIR__ . '/src')
+        ->inDir(__DIR__ . '/tests')
+        ->addFiles([__FILE__])
+        ->getConfig()
+    ;
+    
+    $config->setCacheFile(__DIR__ . '/.build/php-cs-fixer/php-cs-fixer.cache');
+    
+    return $config;
    ```
 
-3. Place `.php-cs-fixer.cache` file into `.gitignore`
+### → Composer Script
+
+- Add `scripts` section to `composer.json`:
+  
+  ```diff
+  {
+      "scripts": {
+  +       "cs:diff": "php vendor/bin/php-cs-fixer fix --dry-run -v --diff",
+  +       "cs:fix": "php vendor/bin/php-cs-fixer fix -v"
+      }
+  }
+  ```
+
+### → Git
+
+- Place `.build` folder file into `.gitignore`
+
+  ```diff
+  +/.build/
+   /vendor/
+  ```
+
+### → GitHub Actions
+
+To use in GitHub Actions, do...
 
 <br>
 
 ## 💻 Usage
 
-### → Running
-
 Fix coding standards by simply running console command:
 
+### → Directly
+
 ```bash
-php vendor/bin/php-cs-fixer fix -v
+vendor/bin/php-cs-fixer fix -v
 ```
+
+### → Via Composer Script
+
+To use via composer script commands:
+
+- Fixes code to follow coding standards using php-cs-fixer:
+
+  ```bash
+  composer cs:diff
+  ```
+
+- Runs php-cs-fixer in dry-run mode and shows diff which will by applied:
+
+  ```bash
+  composer cs:fix
+  ```
 
 ### → Using Makefile
 
-To use with our `Makefile`:
+**To use with `Makefile`**
 
-1. Add `scripts` section to `composer.json`:
+- Fixes code to follow coding standards using php-cs-fixer:
 
-   ```json
-   {
-       "scripts": {
-           "cs-fix": "php vendor/bin/php-cs-fixer fix -v",
-           "cs-diff": "php vendor/bin/php-cs-fixer fix --dry-run -v --diff"
-       }
-   }
-   ```
+  ```bash
+  make lint-php
+  ```
 
-2. Use `Makefile` code to run PHP-CS-Fixer tests:
+- Runs php-cs-fixer in dry-run mode and shows diff which will by applied:
 
-   ```bash
-   # Run inspections and fix code
-   $ make cs-fix
-   
-   # Check coding standards without applying the fix
-   $ make cs-diff
-   ```
-
-<br>
-
-## 🧪 Running Tests
-
-### → PHPUnit tests
-
-To run tests, run the following command:
-
-```bash
-make test
-```
-
-### → Static Analysis
-
-Code quality using PHPStan:
-
-```bash
-make stan
-```
-
-### → Coding Standards Fixing
-
-Fix code using The PHP Coding Standards Fixer (PHP CS Fixer) to follow our standards:
-
-```bash
-make cs-fix
-```
+  ```bash
+  make lint-diff 
+  ```
 
 <br>
 
@@ -158,9 +174,11 @@ You are more than welcome. Before contributing, kindly check our [contribution g
 
 ## 🫡 Contributors
 
-<a href="https://github.com/wayofdev/php-cs-fixer-config/graphs/contributors">
-    <img align="left" src="https://img.shields.io/github/contributors-anon/wayofdev/php-cs-fixer-config?style=for-the-badge" alt="Contributors Badge"/>
-</a>
+<p align="left">
+    <a href="https://github.com/wayofdev/php-cs-fixer-config/graphs/contributors">
+        <img align="left" src="https://img.shields.io/github/contributors-anon/wayofdev/php-cs-fixer-config?style=for-the-badge" alt="Contributors Badge"/>
+    </a>
+</p>
 
 <br>
 
