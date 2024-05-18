@@ -12,5 +12,8 @@ interface RuleSet
 
     public function useCache(): bool;
 
+    /**
+     * @return array<string, array<string, mixed>|bool>
+     */
     public function rules(): array;
 }

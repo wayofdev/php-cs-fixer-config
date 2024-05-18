@@ -131,6 +131,11 @@ final class ConfigBuilderTest extends TestCase
         self::assertEmpty(array_diff_assoc($expected, $rules));
     }
 
+    /**
+     * @param iterable<SplFileInfo> $finder
+     *
+     * @return array<string>
+     */
     private function finderToArray(iterable $finder): array
     {
         $map = static function (SplFileInfo $info): string {
