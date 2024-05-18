@@ -1,32 +1,32 @@
 {
     "name": "wayofdev/cs-fixer-config",
     "description": "Package adds custom rule-sets to php-cs-fixer",
-    "type": "library",
     "license": "MIT",
-    "homepage": "https://wayof.dev",
-    "support": {
-        "issues": "https://github.com/wayofdev/php-cs-fixer-config/issues",
-        "source": "https://github.com/wayofdev/php-cs-fixer-config"
-    },
+    "type": "library",
     "authors": [
         {
             "name": "Andrij Orlenko",
             "email": "the@wayof.dev"
         }
     ],
+    "homepage": "https://wayof.dev",
+    "support": {
+        "issues": "https://github.com/wayofdev/php-cs-fixer-config/issues",
+        "source": "https://github.com/wayofdev/php-cs-fixer-config"
+    },
     "require": {
         "php": "^8.1",
         "friendsofphp/php-cs-fixer": "^3.57"
     },
     "require-dev": {
+        "ergebnis/phpunit-slow-test-detector": "^2.14",
+        "pestphp/pest": "^2.34",
         "phpstan/extension-installer": "^1.3",
         "phpstan/phpstan": "^1.11",
         "phpstan/phpstan-deprecation-rules": "^1.2",
         "phpstan/phpstan-phpunit": "^1.4",
         "phpstan/phpstan-strict-rules": "^1.6",
-        "phpunit/phpunit": "^10.5",
-        "pestphp/pest": "^2.34",
-        "ergebnis/phpunit-slow-test-detector": "^2.14"
+        "phpunit/phpunit": "^10.5"
     },
     "autoload": {
         "psr-4": {
@@ -36,6 +36,26 @@
     "autoload-dev": {
         "psr-4": {
             "WayOfDev\\PhpCsFixer\\Config\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        },
+        "audit": {
+            "abandoned": "report"
+        },
+        "platform": {
+            "php": "8.1.27"
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "composer-normalize": {
+            "indent-size": 4,
+            "indent-style": "space"
         }
     },
     "scripts": {
@@ -53,19 +73,5 @@
         "stan:ci": "php vendor/bin/phpstan analyse --memory-limit=2G --error-format=github",
         "test": "XDEBUG_MODE=coverage php vendor/bin/pest",
         "test:cc": "XDEBUG_MODE=coverage php vendor/bin/pest --coverage --coverage-clover=.build/phpunit/logs/clover.xml"
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "ergebnis/composer-normalize": true,
-            "phpstan/extension-installer": true,
-            "pestphp/pest-plugin": true
-        }
-    },
-    "extra": {
-        "composer-normalize": {
-            "indent-size": 4,
-            "indent-style": "space"
-        }
     }
 }
