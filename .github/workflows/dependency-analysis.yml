@@ -70,7 +70,7 @@ jobs:
           dependencies: ${{ matrix.dependencies }}
 
       - name: 📥 Install dependencies with phive
-        uses: wayofdev/gh-actions/actions/phive/install@3.1.0
+        uses: wayofdev/gh-actions/actions/phive/install@v3.1.0
         with:
           phive-home: '.phive'
           trust-gpg-keys: 0xC00543248C87FB13,0x033E5F8D801A2F8D
