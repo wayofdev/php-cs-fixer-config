@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.1](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.3.0...v1.3.1) (2024-05-21)
+
+
+### Documentation
+
+* update readme ([c683a5a](https://github.com/wayofdev/php-cs-fixer-config/commit/c683a5a16f87f4588df96c3330ac433aefd56c78))
+* update README ([58826b6](https://github.com/wayofdev/php-cs-fixer-config/commit/58826b6c15d35eace31e8add349f5538aec452e9))
+* updating readme ([bd3801c](https://github.com/wayofdev/php-cs-fixer-config/commit/bd3801c08f56f7ed8d633e1927290eab1544a235))
+* updating readme ([27f9eb7](https://github.com/wayofdev/php-cs-fixer-config/commit/27f9eb7aaec2db6a05f4d2cdfbfc56c782a7c3c8))
+
 ## [1.3.0](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.2.61...v1.3.0) (2024-05-18)
 
 
