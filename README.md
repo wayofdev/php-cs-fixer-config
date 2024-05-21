@@ -27,13 +27,27 @@
 
 Wrapper with pre-defined rules around the [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) package — A tool to automatically fix PHP Coding Standards issues.
 
-This repository aims to provide a standardized way to apply coding standards across multiple projects, ensuring consistency and adherence to best practices.
-
-By using predefined rulesets, it simplifies the setup process and allows teams to quickly integrate PHP-CS-Fixer into their development workflow.
+This repository aims to provide a standardized way to apply coding standards across multiple projects, ensuring consistency and adherence to best practices. By using predefined rulesets, it simplifies the setup process and allows teams to quickly integrate PHP-CS-Fixer into their development workflow.
 
 <br>
 
 If you **like/use** this package, please consider ⭐️ **starring** it. Thanks!
+
+<br>
+
+## 📜 Custom Rulesets
+
+**```WayOfDev\PhpCsFixer\Config\RuleSets\DefaultRuleset::class```**
+
+Based on **`@Symfony`** ruleset
+
+* Used by [`@wayofdev`](https://github.com/wayofdev) organization
+
+**`WayOfDev\PhpCsFixer\Config\RuleSets\ExtendedPERSet::class`**
+
+Based on **`@PER-CS2.0`** ruleset
+
+* Used by [`@buggregator`](https://github.com/buggregator) and [`@cycle`](http://github.com/cycle) organizations
 
 <br>
 
@@ -53,9 +67,9 @@ composer req --dev wayofdev/cs-fixer-config
 
 ### → Setup
 
-- Create PHP file and name it `.php-cs-fixer.dist.php` and place it inside root directory of project. It will be recognized by PHP CS Fixer automatically.
+* Create PHP file and name it `.php-cs-fixer.dist.php` and place it inside root directory of project. It will be recognized by PHP CS Fixer automatically.
 
-- Example contents of `.php-cs-fixer.dist.php` file:
+* Example contents of `.php-cs-fixer.dist.php` file:
 
    ```php
     <?php
@@ -81,7 +95,7 @@ composer req --dev wayofdev/cs-fixer-config
 
 ### → Composer Script
 
-- Add `scripts` section to `composer.json`:
+* Add `scripts` section to `composer.json`:
   
   ```diff
   {
@@ -94,7 +108,7 @@ composer req --dev wayofdev/cs-fixer-config
 
 ### → Git
 
-- Place `.build` folder file into `.gitignore`
+* Place `.build` folder file into `.gitignore`
 
   ```diff
   +/.build/
@@ -103,7 +117,7 @@ composer req --dev wayofdev/cs-fixer-config
 
 ### → Makefile
 
-- If you are using [`Makefile`](https://www.gnu.org/software/make/manual/make.html#Introduction), create a `Makefile` with a `lint-php` and `lint-diff` targets:
+* If you are using [`Makefile`](https://www.gnu.org/software/make/manual/make.html#Introduction), create a `Makefile` with a `lint-php` and `lint-diff` targets:
 
   ```diff
   +APP_RUNNER ?= php
@@ -122,15 +136,15 @@ composer req --dev wayofdev/cs-fixer-config
   +.PHONY: lint-diff
   ```
 
-​ Or, you can check for one of our pre-configured `Makefile` from any of these repositories:
+ Or, you can check for one of our pre-configured `Makefile` from any of these repositories:
 
-​ <https://github.com/wayofdev/php-cs-fixer-config/blob/master/Makefile>
+ <https://github.com/wayofdev/php-cs-fixer-config/blob/master/Makefile>
 
-​ <https://github.com/wayofdev/laravel-package-tpl/blob/master/Makefile>
+ <https://github.com/wayofdev/laravel-package-tpl/blob/master/Makefile>
 
 ### → GitHub Actions
 
-- To use this package in [GitHub Actions](https://github.com/features/actions), add a `coding-standards.yml` workflow to your repository:
+* To use this package in [GitHub Actions](https://github.com/features/actions), add a `coding-standards.yml` workflow to your repository:
 
   ```yaml
   ---
@@ -219,9 +233,9 @@ composer req --dev wayofdev/cs-fixer-config
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   ```
 
-​ Or, you can check for one of our pre-configured workflows from any of these repositories:
+ Or, you can check for one of our pre-configured workflows from any of these repositories:
 
-​ <https://github.com/wayofdev/php-cs-fixer-config/blob/master/.github/workflows/coding-standards.yml>
+ <https://github.com/wayofdev/php-cs-fixer-config/blob/master/.github/workflows/coding-standards.yml>
 
 <br>
 
@@ -239,13 +253,13 @@ vendor/bin/php-cs-fixer fix -v
 
 To use via composer script commands:
 
-- Fixes code to follow coding standards using php-cs-fixer:
+* Fixes code to follow coding standards using php-cs-fixer:
 
   ```bash
   composer cs:diff
   ```
 
-- Runs php-cs-fixer in dry-run mode and shows diff which will by applied:
+* Runs php-cs-fixer in dry-run mode and shows diff which will by applied:
 
   ```bash
   composer cs:fix
@@ -255,13 +269,13 @@ To use via composer script commands:
 
 **To use with `Makefile`**
 
-- Fixes code to follow coding standards using php-cs-fixer:
+* Fixes code to follow coding standards using php-cs-fixer:
 
   ```bash
   make lint-php
   ```
 
-- Runs php-cs-fixer in dry-run mode and shows diff which will by applied:
+* Runs php-cs-fixer in dry-run mode and shows diff which will by applied:
 
   ```bash
   make lint-diff 
@@ -279,10 +293,10 @@ This project has a [security policy](.github/SECURITY.md).
 
 Thank you for considering contributing to the wayofdev community! We are open to all kinds of contributions. If you want to:
 
-- 🤔 [Suggest a feature](https://github.com/wayofdev/php-cs-fixer-config/issues/new?assignees=&labels=type%3A+enhancement&projects=&template=2-feature-request.yml&title=%5BFeature%5D%3A+)
-- 🐛 [Report an issue](https://github.com/wayofdev/php-cs-fixer-config/issues/new?assignees=&labels=type%3A+documentation%2Ctype%3A+maintenance&projects=&template=1-bug-report.yml&title=%5BBug%5D%3A+)
-- 📖 [Improve documentation](https://github.com/wayofdev/php-cs-fixer-config/issues/new?assignees=&labels=type%3A+documentation%2Ctype%3A+maintenance&projects=&template=4-docs-bug-report.yml&title=%5BDocs%5D%3A+)
-- 👨‍💻 Contribute to the code
+* 🤔 [Suggest a feature](https://github.com/wayofdev/php-cs-fixer-config/issues/new?assignees=&labels=type%3A+enhancement&projects=&template=2-feature-request.yml&title=%5BFeature%5D%3A+)
+* 🐛 [Report an issue](https://github.com/wayofdev/php-cs-fixer-config/issues/new?assignees=&labels=type%3A+documentation%2Ctype%3A+maintenance&projects=&template=1-bug-report.yml&title=%5BBug%5D%3A+)
+* 📖 [Improve documentation](https://github.com/wayofdev/php-cs-fixer-config/issues/new?assignees=&labels=type%3A+documentation%2Ctype%3A+maintenance&projects=&template=4-docs-bug-report.yml&title=%5BDocs%5D%3A+)
+* 👨‍💻 Contribute to the code
 
 You are more than welcome. Before contributing, kindly check our [contribution guidelines](.github/CONTRIBUTING.md).
 
@@ -302,21 +316,21 @@ You are more than welcome. Before contributing, kindly check our [contribution g
 
 ## 🌐 Social Links
 
-- **Twitter:** Follow our organization [@wayofdev](https://twitter.com/intent/follow?screen_name=wayofdev) and the author [@wlotyp](https://twitter.com/intent/follow?screen_name=wlotyp).
-- **Discord:** Join our community on [Discord](https://discord.gg/CE3TcCC5vr).
+* **Twitter:** Follow our organization [@wayofdev](https://twitter.com/intent/follow?screen_name=wayofdev) and the author [@wlotyp](https://twitter.com/intent/follow?screen_name=wlotyp).
+* **Discord:** Join our community on [Discord](https://discord.gg/CE3TcCC5vr).
 
 <p align="left">
-<a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Codecov" src="https://img.shields.io/discord/1228506758562058391?style=for-the-badge&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
-<a href="https://x.com/intent/follow?screen_name=wayofdev" target="_blank"><img alt="Follow on Twitter (X)" src="https://img.shields.io/badge/-Follow-black?style=for-the-badge&logo=X"></a>
+    <a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Codecov" src="https://img.shields.io/discord/1228506758562058391?style=for-the-badge&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
+    <a href="https://x.com/intent/follow?screen_name=wayofdev" target="_blank"><img alt="Follow on Twitter (X)" src="https://img.shields.io/badge/-Follow-black?style=for-the-badge&logo=X"></a>
 </p>
 
 <br>
 
 ## 🧱 Resources
 
-- Full documentation about all fixers are available here - [PHP-CS-Fixer configuration UI](https://mlocati.github.io/php-cs-fixer-configurator/#version:3.0)
+* Full documentation about all fixers is available here - [PHP-CS-Fixer configuration UI](https://mlocati.github.io/php-cs-fixer-configurator/#version:3.0)
 
-- The official [PHP-CS-Fixer documentation](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+* The official [PHP-CS-Fixer documentation](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 
 <br>
 
