@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.4.2...v1.4.3) (2024-05-23)
+
+
+### Bug Fixes
+
+* class_attributes_separation and no_unused_imports rules ([9dac17f](https://github.com/wayofdev/php-cs-fixer-config/commit/9dac17fe09146a002e166f3b019678e545e3fd63))
+
 ## [1.4.2](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.4.1...v1.4.2) (2024-05-23)
 
 
