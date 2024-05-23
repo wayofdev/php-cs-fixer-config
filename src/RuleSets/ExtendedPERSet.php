@@ -74,10 +74,11 @@ final class ExtendedPERSet implements RuleSet
             ],
             'class_attributes_separation' => [
                 'elements' => [
-                    'const' => 'one',
+                    'const' => 'only_if_meta',
                     'method' => 'one',
-                    'property' => 'one',
+                    'property' => 'only_if_meta',
                     'trait_import' => 'none',
+                    'case' => 'only_if_meta',
                 ],
             ],
 
