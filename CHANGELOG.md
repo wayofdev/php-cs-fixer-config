@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.3.1...v1.4.0) (2024-05-23)
+
+
+### Features
+
+* class order ([95fc35b](https://github.com/wayofdev/php-cs-fixer-config/commit/95fc35b6c2ff8f26d290714d323104fb9cfeff8e))
+
 ## [1.3.1](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.3.0...v1.3.1) (2024-05-21)
 
 
