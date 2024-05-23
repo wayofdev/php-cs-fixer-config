@@ -79,6 +79,7 @@ final class DefaultSet implements RuleSet
                     'property_protected',
                     'property_private_static',
                     'property_private',
+                    'construct',
                     'method_public_static',
                     'method_protected_static',
                     'method_private_static',
@@ -90,7 +91,6 @@ final class DefaultSet implements RuleSet
                     'method_public',
                     'method_protected',
                     'method_private',
-                    'destruct',
                 ],
             ],
             'global_namespace_import' => [

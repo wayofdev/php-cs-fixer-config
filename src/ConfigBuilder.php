@@ -22,6 +22,15 @@ final class ConfigBuilder
 {
     private Config $config;
 
+    private function __construct(private readonly RuleSet $ruleSet)
+    {
+        $this->config = new Config($ruleSet->name());
+        $this->config
+            ->setRiskyAllowed($ruleSet->allowRisky())
+            ->setUsingCache($ruleSet->useCache())
+        ;
+    }
+
     public static function createFromRuleSet(RuleSet $ruleSet): self
     {
         return new self($ruleSet);
@@ -65,15 +74,6 @@ final class ConfigBuilder
     public function getConfig(): ConfigInterface
     {
         return $this->config->setRules($this->ruleSet->rules());
-    }
-
-    private function __construct(private readonly RuleSet $ruleSet)
-    {
-        $this->config = new Config($ruleSet->name());
-        $this->config
-            ->setRiskyAllowed($ruleSet->allowRisky())
-            ->setUsingCache($ruleSet->useCache())
-        ;
     }
 
     private function getFinder(): Finder
