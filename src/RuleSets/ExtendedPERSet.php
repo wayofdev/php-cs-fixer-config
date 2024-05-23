@@ -166,9 +166,9 @@ final class ExtendedPERSet implements RuleSet
                 'use_parentheses' => false,
             ],
             'phpdoc_line_span' => [
-                'const' => 'multi',
+                'const' => null,
                 'method' => 'multi',
-                'property' => 'multi',
+                'property' => null,
             ],
         ], $this->rules);
     }
