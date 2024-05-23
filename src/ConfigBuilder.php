@@ -71,6 +71,16 @@ final class ConfigBuilder
         return $this;
     }
 
+    /**
+     * @param list<string> $files
+     */
+    public function exclude(array $files): self
+    {
+        $this->getFinder()->exclude($files);
+
+        return $this;
+    }
+
     public function getConfig(): ConfigInterface
     {
         return $this->config->setRules($this->ruleSet->rules());

@@ -148,6 +148,9 @@ final class DefaultSet implements RuleSet
             'self_static_accessor' => true,
             'no_useless_else' => true,
             'no_useless_return' => true,
+            'class_definition' => [
+                'space_before_parenthesis' => false,
+            ],
 
             /*
              * @PhpCsFixer:risky

@@ -44,6 +44,13 @@ final class ExtendedPERSet implements RuleSet
             '@PER-CS2.0' => true,
 
             /*
+             * @PER-CS2.0 Overrides
+             */
+            'class_definition' => [
+                'space_before_parenthesis' => false,
+            ],
+
+            /*
              * @Symfony
              */
             'yoda_style' => [
