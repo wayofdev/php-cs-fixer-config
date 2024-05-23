@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.4.1](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.4.0...v1.4.1) (2024-05-23)
+
+
+### Bug Fixes
+
+* do not force multiline doc blocks ([d63f17f](https://github.com/wayofdev/php-cs-fixer-config/commit/d63f17f7e02e3fb07799db62a3957ccf00e44779))
+* PSR-12 space_before_parenthesis ([d1f30ec](https://github.com/wayofdev/php-cs-fixer-config/commit/d1f30ec67215bf4a0c4a78a752bb89979e427fa4))
+* remove php_doc_align fixer ([1921d38](https://github.com/wayofdev/php-cs-fixer-config/commit/1921d3832a897f455cc9e24ca9a6a70ff368961e))
+
 ## [1.4.0](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.3.1...v1.4.0) (2024-05-23)
 
 
