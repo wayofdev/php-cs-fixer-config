@@ -46,9 +46,6 @@ final class ExtendedPERSet implements RuleSet
             /*
              * @Symfony
              */
-            'phpdoc_align' => [
-                'align' => 'left',
-            ],
             'yoda_style' => [
                 'equal' => false,
                 'identical' => false,
