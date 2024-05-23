@@ -74,13 +74,14 @@ final class ExtendedPERSet implements RuleSet
             ],
             'class_attributes_separation' => [
                 'elements' => [
-                    'const' => 'only_if_meta',
+                    'const' => 'one',
                     'method' => 'one',
-                    'property' => 'only_if_meta',
+                    'property' => 'one',
                     'trait_import' => 'none',
-                    'case' => 'only_if_meta',
+                    'case' => 'one',
                 ],
             ],
+            'no_unused_imports' => true,
 
             /*
              * @Symfony:risky
