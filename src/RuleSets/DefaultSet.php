@@ -104,6 +104,7 @@ final class DefaultSet implements RuleSet
                     'method' => 'one',
                     'property' => 'one',
                     'trait_import' => 'none',
+                    'case' => 'one',
                 ],
             ],
 
