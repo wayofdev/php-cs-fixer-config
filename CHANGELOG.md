@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.4](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.4.3...v1.4.4) (2024-05-23)
+
+
+### Bug Fixes
+
+* class_attributes_separation ruleset ([d72c48a](https://github.com/wayofdev/php-cs-fixer-config/commit/d72c48a39f8d5a12fe975a7c9bf6f6ea28153619))
+
 ## [1.4.3](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.4.2...v1.4.3) (2024-05-23)
 
 
