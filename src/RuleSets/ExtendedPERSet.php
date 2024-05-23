@@ -44,11 +44,15 @@ final class ExtendedPERSet implements RuleSet
             '@PER-CS2.0' => true,
 
             /*
+             * @PER-CS2.0 Overrides
+             */
+            'class_definition' => [
+                'space_before_parenthesis' => false,
+            ],
+
+            /*
              * @Symfony
              */
-            'phpdoc_align' => [
-                'align' => 'left',
-            ],
             'yoda_style' => [
                 'equal' => false,
                 'identical' => false,
@@ -166,9 +170,9 @@ final class ExtendedPERSet implements RuleSet
                 'use_parentheses' => false,
             ],
             'phpdoc_line_span' => [
-                'const' => 'multi',
+                'const' => null,
                 'method' => 'multi',
-                'property' => 'multi',
+                'property' => null,
             ],
         ], $this->rules);
     }
