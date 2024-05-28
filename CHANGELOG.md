@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.5](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.4.4...v1.4.5) (2024-05-28)
+
+
+### Bug Fixes
+
+* prefix all functions with back-slash ([cf83942](https://github.com/wayofdev/php-cs-fixer-config/commit/cf8394239a375146e4fbae2894da4d4731d90de1))
+
 ## [1.4.4](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.4.3...v1.4.4) (2024-05-23)
 
 
