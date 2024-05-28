@@ -91,7 +91,7 @@ final class ExtendedPERSet implements RuleSet
                     NativeFunctionInvocationFixer::SET_INTERNAL,
                     NativeFunctionInvocationFixer::SET_COMPILER_OPTIMIZED,
                 ],
-                'scope' => 'namespaced',
+                'scope' => 'all',
                 'strict' => true,
             ],
 
