@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.5.0](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.4.5...v1.5.0) (2024-05-29)
+
+
+### Features
+
+* add parallel config ([5fc57b5](https://github.com/wayofdev/php-cs-fixer-config/commit/5fc57b54bdddd7fd1987e3427190fb3ab1ce655f))
+
+
+### Bug Fixes
+
+* **deps:** update dependency friendsofphp/php-cs-fixer to v3.57.2 ([6aa22f6](https://github.com/wayofdev/php-cs-fixer-config/commit/6aa22f6831808b15a41ffe497c0ed2476ced1072))
+
+
+### Dependencies
+
+* update composer ([5ac2aa7](https://github.com/wayofdev/php-cs-fixer-config/commit/5ac2aa736d494d2803a1bf854b64b46d6fcf2549))
+
 ## [1.4.5](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.4.4...v1.4.5) (2024-05-28)
 
 
