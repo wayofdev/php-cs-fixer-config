@@ -8,6 +8,8 @@ use BadMethodCallException;
 use PhpCsFixer\Config;
 use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
+use PhpCsFixer\Runner\Parallel\ParallelConfig;
+use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
 use function call_user_func_array;
 use function get_class;
@@ -84,6 +86,24 @@ final class ConfigBuilder
     public function getConfig(): ConfigInterface
     {
         return $this->config->setRules($this->ruleSet->rules());
+    }
+
+    /**
+     * Wrapper method to set parallel config.
+     *
+     * @param positive-int|null $maxProcesses
+     * @param positive-int|null $filesPerProcess
+     * @param positive-int|null $processTimeout
+     */
+    public function useParallelConfig(?int $maxProcesses = null, ?int $filesPerProcess = null, ?int $processTimeout = null): self
+    {
+        if ($maxProcesses !== null && $filesPerProcess !== null && $processTimeout !== null) {
+            $this->config->setParallelConfig(new ParallelConfig($maxProcesses, $filesPerProcess, $processTimeout));
+        } else {
+            $this->config->setParallelConfig(ParallelConfigFactory::detect());
+        }
+
+        return $this;
     }
 
     private function getFinder(): Finder
