@@ -11,6 +11,7 @@ $config = ConfigBuilder::createFromRuleSet(new DefaultSet())
     ->inDir(__DIR__ . '/src')
     ->inDir(__DIR__ . '/tests')
     ->addFiles([__FILE__])
+    ->useParallelConfig()
     ->getConfig()
 ;
 
