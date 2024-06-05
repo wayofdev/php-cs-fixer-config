@@ -4,18 +4,6 @@ Thank you for helping keep `wayofdev/php-cs-fixer-config` and its users safe. We
 
 <br>
 
-## 🙋‍♂️ Supported Versions
-
-Only certain versions of `wayofdev/php-cs-fixer-config` are currently being maintained with security updates. Please use or upgrade to one of these supported versions:
-
-| Version | Supported          |
-|---------|--------------------|
-| ^1.3    | :white_check_mark: |
-
-Please ensure that you are using one of these supported versions before reporting a security issue.
-
-<br>
-
 ## 🚨 Reporting a Vulnerability
 
 We take all security bugs in `wayofdev/php-cs-fixer-config` seriously. Please follow the instructions below to report security vulnerabilities.
