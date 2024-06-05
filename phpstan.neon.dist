@@ -7,4 +7,6 @@ parameters:
         - src/
         - tests/
         - .php-cs-fixer.dist.php
+    excludePaths:
+        - tests/Arch
     tmpDir: .build/phpstan/

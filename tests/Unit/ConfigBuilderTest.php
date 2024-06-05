@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
-namespace WayOfDev\PhpCsFixer\Config\Tests\Unit;
+namespace WayOfDev\Tests\Unit;
 
+use BadMethodCallException;
 use LogicException;
 use PhpCsFixer\Config;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use SplFileInfo;
 use WayOfDev\PhpCsFixer\Config\ConfigBuilder;
@@ -24,9 +26,7 @@ final class ConfigBuilderTest extends TestCase
         $this->builder = ConfigBuilder::createFromRuleSet(new DefaultSet());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_retrieves_default_options(): void
     {
         $config = $this->builder->getConfig();
@@ -36,9 +36,7 @@ final class ConfigBuilderTest extends TestCase
         self::assertTrue($config->getUsingCache());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_overrides_default_options(): void
     {
         /** @var Config $config */
@@ -52,9 +50,7 @@ final class ConfigBuilderTest extends TestCase
         self::assertFalse($config->getUsingCache());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_has_no_directories_by_default(): void
     {
         $this->expectException(LogicException::class);
@@ -62,9 +58,7 @@ final class ConfigBuilderTest extends TestCase
         [...$this->builder->getConfig()->getFinder()];
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_adds_directories(): void
     {
         $finder = $this->builder
@@ -80,9 +74,7 @@ final class ConfigBuilderTest extends TestCase
         self::assertContains(realpath(__DIR__ . '/../../src/ConfigBuilder.php'), $items);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_adds_files(): void
     {
         $finder = $this->builder
@@ -97,9 +89,7 @@ final class ConfigBuilderTest extends TestCase
         self::assertContains(__FILE__, $items);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_adds_default_rules(): void
     {
         $rules = $this->builder
@@ -114,9 +104,7 @@ final class ConfigBuilderTest extends TestCase
         self::assertEmpty(array_diff_assoc($expected, $rules));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_overrides_default_rules(): void
     {
         $rules = ConfigBuilder::createFromRuleSet(new DefaultSet(['@Symfony' => false]))
@@ -129,6 +117,58 @@ final class ConfigBuilderTest extends TestCase
         ];
 
         self::assertEmpty(array_diff_assoc($expected, $rules));
+    }
+
+    #[Test]
+    public function it_excludes_directories(): void
+    {
+        $finder = $this->builder
+            ->exclude([__DIR__ . '/../../src/RuleSets'])
+            ->inDir(__DIR__ . '/../../src')
+            ->getConfig()
+            ->getFinder()
+        ;
+
+        $items = $this->finderToArray($finder);
+
+        self::assertNotContains(__DIR__ . '/../../src/RuleSets/DefaultSet.php', $items);
+    }
+
+    #[Test]
+    public function it_calls_methods_on_config(): void
+    {
+        $config = $this->builder
+            ->setRiskyAllowed(false)
+            ->getConfig()
+        ;
+
+        self::assertFalse($config->getRiskyAllowed());
+    }
+
+    #[Test]
+    public function it_throws_exception_on_invalid_method_call(): void
+    {
+        $this->expectException(BadMethodCallException::class);
+        $this->expectExceptionMessage('Method "PhpCsFixer\Config::invalidMethod" does not exists.');
+
+        // @phpstan-ignore-next-line
+        $this->builder->invalidMethod();
+    }
+
+    #[Test]
+    public function it_sets_parallel_config_with_custom_parameters(): void
+    {
+        /** @var Config $config */
+        $config = $this->builder
+            ->useParallelConfig(4, 10, 600)
+            ->getConfig()
+        ;
+
+        $parallelConfig = $config->getParallelConfig();
+
+        self::assertSame(4, $parallelConfig->getMaxProcesses());
+        self::assertSame(10, $parallelConfig->getFilesPerProcess());
+        self::assertSame(600, $parallelConfig->getProcessTimeout());
     }
 
     /**

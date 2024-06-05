@@ -22,7 +22,7 @@ use function sprintf;
  */
 final class ConfigBuilder
 {
-    private Config $config;
+    private readonly Config $config;
 
     private function __construct(private readonly RuleSet $ruleSet)
     {
