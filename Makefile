@@ -127,7 +127,7 @@ else
 endif
 .PHONY: env
 
-prepare:
+prepare: ## Prepare project for development
 	mkdir -p .build/php-cs-fixer
 .PHONY: prepare
 
@@ -295,6 +295,6 @@ test-sep: ## Run project php-unit tests that requires @runInSeparateProcess anno
 #
 # Release
 # ------------------------------------------------------------------------------------
-commit:
+commit: ## Run commitizen to create commit message
 	czg commit --config="./.github/.cz.config.js"
 .PHONY: commit
