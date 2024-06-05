@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="5.24.0@462c80e31c34e58cc4f750c656be3927e80e550e">
+  <file src="src/RuleSets/ExtendedPERSet.php">
+    <UnusedClass>
+      <code><![CDATA[ExtendedPERSet]]></code>
+    </UnusedClass>
+  </file>
+  <file src="tests/Unit/ConfigBuilderTest.php">
+    <InvalidOperand>
+      <code><![CDATA[$finder]]></code>
+      <code><![CDATA[$this->builder->getConfig()->getFinder()]]></code>
+    </InvalidOperand>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[it_adds_default_rules]]></code>
+      <code><![CDATA[it_adds_directories]]></code>
+      <code><![CDATA[it_adds_files]]></code>
+      <code><![CDATA[it_calls_methods_on_config]]></code>
+      <code><![CDATA[it_excludes_directories]]></code>
+      <code><![CDATA[it_has_no_directories_by_default]]></code>
+      <code><![CDATA[it_overrides_default_options]]></code>
+      <code><![CDATA[it_overrides_default_rules]]></code>
+      <code><![CDATA[it_retrieves_default_options]]></code>
+      <code><![CDATA[it_sets_parallel_config_with_custom_parameters]]></code>
+      <code><![CDATA[it_throws_exception_on_invalid_method_call]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[invalidMethod]]></code>
+    </UndefinedMagicMethod>
+  </file>
+  <file src="tests/Unit/RuleSets/DefaultSetTest.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[it_allows_risky_rules]]></code>
+      <code><![CDATA[it_merges_custom_rules_with_default_rules]]></code>
+      <code><![CDATA[it_retrieves_name]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+</files>

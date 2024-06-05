@@ -73,30 +73,30 @@ composer req --dev wayofdev/cs-fixer-config
 
    ```php
     <?php
-    
+
     declare(strict_types=1);
-    
+
     use WayOfDev\PhpCsFixer\Config\ConfigBuilder;
     use WayOfDev\PhpCsFixer\Config\RuleSets\DefaultSet;
-    
+
     require_once 'vendor/autoload.php';
-    
+
     $config = ConfigBuilder::createFromRuleSet(new DefaultSet())
         ->inDir(__DIR__ . '/src')
         ->inDir(__DIR__ . '/tests')
         ->addFiles([__FILE__])
         ->getConfig()
     ;
-    
+
     $config->setCacheFile(__DIR__ . '/.build/php-cs-fixer/php-cs-fixer.cache');
-    
+
     return $config;
    ```
 
 ### → Composer Script
 
 * Add `scripts` section to `composer.json`:
-  
+
   ```diff
   {
       "scripts": {
@@ -126,11 +126,11 @@ composer req --dev wayofdev/cs-fixer-config
   +prepare:
   +  mkdir -p .build/php-cs-fixer
   +.PHONY: prepare
-  
+
   +lint-php: prepare ## Fixes code to follow coding standards using php-cs-fixer
   +  $(APP_COMPOSER) cs:fix
   +.PHONY: lint-php
-  
+
   +lint-diff: prepare ## Runs php-cs-fixer in dry-run mode and shows diff which will by applied
   +  $(APP_COMPOSER) cs:diff
   +.PHONY: lint-diff
@@ -148,7 +148,7 @@ composer req --dev wayofdev/cs-fixer-config
 
   ```yaml
   ---
-  
+
   on:  # yamllint disable-line rule:truthy
     pull_request:
       branches:
@@ -156,9 +156,9 @@ composer req --dev wayofdev/cs-fixer-config
     push:
       branches:
         - master
-  
+
   name: 🧹 Fix PHP coding standards
-  
+
   jobs:
     coding-standards:
       timeout-minutes: 4
@@ -181,7 +181,7 @@ composer req --dev wayofdev/cs-fixer-config
           run: |
             git config --global core.autocrlf false
             git config --global core.eol lf
-  
+
         - name: 🛠️ Setup PHP
           uses: shivammathur/setup-php@2.30.4
           with:
@@ -189,40 +189,40 @@ composer req --dev wayofdev/cs-fixer-config
             extensions: none, ctype, dom, json, mbstring, phar, simplexml, tokenizer, xml, xmlwriter
             ini-values: error_reporting=E_ALL
             coverage: none
-  
+
         - name: 📦 Check out the codebase
           uses: actions/checkout@v4.1.5
-  
+
         - name: 🛠️ Setup problem matchers
           run: |
             echo "::add-matcher::${{ runner.tool_cache }}/php.json"
-  
+
         - name: 🤖 Validate composer.json and composer.lock
           run: composer validate --ansi --strict
-  
+
         - name: 🔍 Get composer cache directory
           uses: wayofdev/gh-actions/actions/composer/get-cache-directory@v3.1.0
-  
+
         - name: ♻️ Restore cached dependencies installed with composer
           uses: actions/cache@v4.0.2
           with:
             path: ${{ env.COMPOSER_CACHE_DIR }}
             key: php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}
             restore-keys: php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-
-  
+
         - name: 📥 Install "${{ matrix.dependencies }}" dependencies with composer
           uses: wayofdev/gh-actions/actions/composer/install@v3.1.0
           with:
             dependencies: ${{ matrix.dependencies }}
-  
+
         - name: 🛠️ Prepare environment
           run: make prepare
-  
+
         - name: 🚨 Run coding standards task
           run: composer cs:fix
           env:
             PHP_CS_FIXER_IGNORE_ENV: true
-  
+
         - name: 📤 Commit and push changed files back to GitHub
           uses: stefanzweifel/git-auto-commit-action@v5.0.1
           with:
@@ -278,7 +278,7 @@ To use via composer script commands:
 * Runs php-cs-fixer in dry-run mode and shows diff which will by applied:
 
   ```bash
-  make lint-diff 
+  make lint-diff
   ```
 
 <br>
@@ -320,7 +320,7 @@ You are more than welcome. Before contributing, kindly check our [contribution g
 * **Discord:** Join our community on [Discord](https://discord.gg/CE3TcCC5vr).
 
 <p align="left">
-    <a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Codecov" src="https://img.shields.io/discord/1228506758562058391?style=for-the-badge&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
+    <a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Discord Link" src="https://img.shields.io/discord/1228506758562058391?style=for-the-badge&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
     <a href="https://x.com/intent/follow?screen_name=wayofdev" target="_blank"><img alt="Follow on Twitter (X)" src="https://img.shields.io/badge/-Follow-black?style=for-the-badge&logo=X"></a>
 </p>
 

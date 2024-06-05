@@ -36,6 +36,7 @@ ENVSUBST ?= $(BUILDER) envsubst
 YAML_LINT_RUNNER ?= $(DOCKER) run --rm $$(tty -s && echo "-it" || echo) \
 	-v $(PWD):/data \
 	cytopia/yamllint:latest \
+	-c ./.github/.yamllint.yaml \
 	-f colored .
 
 ACTION_LINT_RUNNER ?= $(DOCKER) run --rm $$(tty -s && echo "-it" || echo) \
@@ -47,7 +48,8 @@ ACTION_LINT_RUNNER ?= $(DOCKER) run --rm $$(tty -s && echo "-it" || echo) \
 MARKDOWN_LINT_RUNNER ?= $(DOCKER) run --rm $$(tty -s && echo "-it" || echo) \
 	-v $(shell pwd):/app \
 	--workdir /app \
-	davidanson/markdownlint-cli2-rules:latest
+	davidanson/markdownlint-cli2-rules:latest \
+	--config ".github/.markdownlint.json"
 
 PHIVE_RUNNER ?= $(DOCKER_COMPOSE) run --rm --no-deps app
 
@@ -94,9 +96,9 @@ help: ## Show this menu
 	@echo
 	@echo '    📑 Logs are stored in      $(MAKE_LOGFILE)'
 	@echo
-	@echo '    📦 Package                 php-cs-fixer-config (github.com/wayofdev/php-cs-fixer-config)'
-	@echo '    🤠 Makefile Author         Andrij Orlenko (github.com/lotyp)'
-	@echo '    🏢 ${YELLOW}Org                     wayofdev (github.com/wayofdev)${RST}'
+	@echo '    📦 Package                 php-cs-fixer-config (https://github.com/wayofdev/php-cs-fixer-config)'
+	@echo '    🤠 Makefile Author         Andrij Orlenko (https://github.com/lotyp)'
+	@echo '    🏢 ${YELLOW}Org                     wayofdev (https://github.com/wayofdev)${RST}'
 	@echo
 .PHONY: help
 
@@ -139,6 +141,10 @@ up: # Creates and starts containers, defined in docker-compose and override file
 down: # Stops and removes containers of this project
 	$(DOCKER_COMPOSE) down --remove-orphans --volumes
 .PHONY: down
+
+stop: ## Stops all containers, without removing them
+	$(DOCKER_COMPOSE) stop
+.PHONY: stop
 
 restart: down up ## Runs down and up commands
 .PHONY: restart
@@ -267,9 +273,16 @@ infect-ci: ## Runs infection – mutation testing framework with github output (
 	$(APP_COMPOSER) infect:ci
 .PHONY: lint-infect-ci
 
-test: ## Run project php-unit and pest tests
+test: test-unit test-arch ## Run project php-unit and pest tests
+.PHONY: test
+
+test-unit: ## Run project php-unit tests
 	$(APP_COMPOSER) test
 .PHONY: test
+
+test-arch: ## Run project pest tests with architecture checks
+	$(APP_COMPOSER) test:arch
+.PHONY: test-arch
 
 test-cc: ## Run project php-unit and pest tests in coverage mode and build report
 	$(APP_COMPOSER) test:cc
