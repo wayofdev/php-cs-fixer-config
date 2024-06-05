@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.5.1](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.5.0...v1.5.1) (2024-06-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency friendsofphp/php-cs-fixer to v3.58.1 ([ea2ca46](https://github.com/wayofdev/php-cs-fixer-config/commit/ea2ca4653a7a2dd63c9d417ae327cd4e7cb9ff06))
+
+
+### Documentation
+
+* add contributing guidelines ([fc9d047](https://github.com/wayofdev/php-cs-fixer-config/commit/fc9d047b4a69235bfc415547b65662bfd7b9004e))
+
+
+### Dependencies
+
+* add support for rector ([e7a0ab1](https://github.com/wayofdev/php-cs-fixer-config/commit/e7a0ab180a90972a7f7b32469b84ea81d36db307))
+
 ## [1.5.0](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.4.5...v1.5.0) (2024-05-29)
 
 
