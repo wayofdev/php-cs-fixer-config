@@ -177,8 +177,6 @@ make lint-yaml
 
 by default, [`cytopia/yamllint`](https://github.com/cytopia/docker-yamllint) Docker image will be used to run linter.
 
-<br>
-
 ### → Action Lint
 
 We use [`actionlint`](https://github.com/rhysd/actionlint) to enforce coding standards in GitHub Actions workflows.
@@ -202,8 +200,6 @@ make lint-md-dry
 make lint-md
 ```
 
-<br>
-
 ### → PHP CS Fixer
 
 We use [`friendsofphp/php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer) together with [`wayofdev/php-cs-fixer-config`](https://github.com/wayofdev/php-cs-fixer-config) to enforce coding standards in PHP files.
@@ -215,8 +211,6 @@ make lint-php
 ```
 
 to automatically fix coding standard violations.
-
-<br>
 
 ### → Rector
 
@@ -345,3 +339,5 @@ To utilize these hooks, you first need to install them using the command provide
 ```bash
 make hooks
 ```
+
+<br>
