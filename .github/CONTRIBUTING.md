@@ -232,7 +232,7 @@ We use [`maglnet/composer-require-checker`](https://github.com/maglnet/ComposerR
 
 Run
 
-```sh
+```bash
 make lint-deps
 ```
 
@@ -254,11 +254,11 @@ make lint-audit
 
 ## 🦠 Mutation Tests
 
-We use [`infection/infection`](https://github.com/infection/infection) to ensure a minimum quality of the tests.
+We use [`infection/infection`](https://github.com/infection/infection) together with [`roave/infection-static-analysis-plugin`](https://github.com/Roave/infection-static-analysis-plugin) to ensure a minimum quality of the tests. Roave plugin is used to publish mutation score results to the [Stryker Dashboard](https://dashboard.stryker-mutator.io/).
 
-Xdebug support is enabled by default, when running commands through `Makefile`:
+Xdebug support is enabled by default when running commands through the `Makefile`:
 
-```sh
+```bash
 make infect
 ```
 
@@ -272,7 +272,7 @@ We use both [`phpstan/phpstan`](https://github.com/phpstan/phpstan) and [`vimeo/
 
 Run
 
-```sh
+```bash
 make lint-stan
 make lint-psalm
 ```
@@ -283,7 +283,7 @@ We also use the baseline features of [`phpstan/phpstan`](https://phpstan.org/use
 
 Run
 
-```sh
+```bash
 make lint-stan-baseline
 make lint-psalm-baseline
 ```
@@ -305,7 +305,7 @@ We use [`phpunit/phpunit`](https://github.com/sebastianbergmann/phpunit) and [`p
 
 Run to run all the tests:
 
-```sh
+```bash
 # To run both, arch (pest) and unit (phpunit) tests
 make test
 
@@ -331,6 +331,7 @@ Our pre-commit configuration includes several hooks:
 - **Check Added Large Files**: Prevents accidentally adding large files to the git repository, with a current limit set to 600 KB.
 - **Commitizen**: Ensures commit messages meet the conventional commit format. This hook is triggered at the commit message stage.
 - **PHP-CS-Fixer:** Enforces coding standards in PHP files.
+- **Markdown Lint:** Enforces coding standards in Markdown files.
 
 ### → Installing Pre-commit Hooks
 
