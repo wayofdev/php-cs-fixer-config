@@ -1,8 +1,48 @@
 # Contributing
 
-If you would like to contribute to this project, please open an issue or a pull request. We are always looking for ways to improve the project and would love to hear your ideas.
+Welcome to our project!
 
-The latest changes are always in master branch, so please make your Pull Request against that branch.
+We appreciate your interest in contributing. This guide will help you get started, ensuring an effective collaboration.
+
+<br>
+
+## 🗂 Table of Contents
+
+* [Introduction](#-introduction)
+* [Development Requirements](#-development-requirements)
+  * [Optional Tools](#-optional-tools)
+* [Quick Project Setup](#-quick-project-setup)
+* [Using the Makefile](#-using-the-makefile)
+  * [Key Commands](#-key-commands)
+* [Workflow](#-workflow)
+* [Docker Support](#-docker-support)
+* [Continuous Integration with GitHub Actions](#-continuous-integration-with-github-actions)
+* [Before You Contribute](#-before-you-contribute)
+* [Commit Message Guidelines](#-commit-message-guidelines)
+* [PHAR Dependencies](#-phar-dependencies)
+* [Coding Standards](#-coding-standards)
+  * [Composer Normalization](#-composer-normalization)
+  * [Yaml Lint](#-yaml-lint)
+  * [Action Lint](#-action-lint)
+  * [Markdown Lint](#-markdown-lint)
+  * [PHP CS Fixer](#-php-cs-fixer)
+  * [Rector](#-rector)
+* [Dependency Analysis](#-dependency-analysis)
+* [Security Audits](#-security-audits)
+* [Mutation Tests](#-mutation-tests)
+* [Static Code Analysis](#-static-code-analysis)
+* [Unit and Functional Tests](#-unit-and-functional-tests)
+* [Pre-commit Hooks](#-pre-commit-hooks)
+  * [Configured Hooks](#-configured-hooks)
+  * [Installing Pre-commit Hooks](#-installing-pre-commit-hooks)
+
+<br>
+
+## 👋 Introduction
+
+If you would like to contribute, please **open an issue** or a pull request. We are always looking for ways to improve the project and would love to hear your ideas.
+
+The latest changes are always in **`master`** branch, so please make your Pull Request against that branch.
 
 <br>
 
@@ -10,24 +50,51 @@ The latest changes are always in master branch, so please make your Pull Request
 
 Before you begin, you will need to set up your local development environment. Here is what you'll need:
 
-- **Operating System**: macOS Monterey+, Linux, or Windows with WSL2.
-- **Docker**: Version 26.0.0 or newer. Installation guides:
-  - [Docker on Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)
-  - [Docker Desktop on Mac](https://docs.docker.com/desktop/install/mac-install/)
-- **Homebrew** (macOS only): Install via [brew.sh](https://brew.sh/).
+* **Operating System**: macOS Monterey+, Linux, or Windows with WSL2.
+* **Docker**: Version 26.0.0 or newer. Installation guides:
+  * [Docker on Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)
+  * [Docker Desktop on Mac](https://docs.docker.com/desktop/install/mac-install/)
 
 ### → Optional Tools
 
-- [Pre-commit](https://pre-commit.com) — Automates the running of git pre-commit hooks.
-  - Installation: `brew install pre-commit` and `make hooks`
-- [Cz-git](https://cz-git.qbb.sh) — Commitizen adapter, that assists in formatting git commits.
-  - Installation: `brew install czg`
+* **Homebrew** (macOS only)
+  * Install via [brew.sh](https://brew.sh/).
+* [Pre-commit](https://pre-commit.com) — Automates the running of git pre-commit hooks.
+  * Installation: `brew install pre-commit` and `make hooks`
+* [Cz-git](https://cz-git.qbb.sh) — Commitizen adapter, that assists in formatting git commits.
+  * Installation: `brew install czg`
 
 <br>
 
-## 🛠️ Makefile
+## 🚀 Quick Project Setup
 
-This project uses a Makefile to streamline common development tasks. The Makefile includes utilities for managing Docker environments, running tests, and linting code.
+We use a dockerized environment. Follow these steps to start working with the project:
+
+1. **Clone this repository:**
+
+   ```bash
+   git clone git@github.com:wayofdev/php-cs-fixer-config.git \
+    && cd ./php-cs-fixer-config
+   ```
+
+2. **Create `.env` file:**
+
+   ```bash
+   make env
+   ```
+
+3. **Install phive and composer dependencies:**
+
+   ```bash
+   make phive
+   make install
+   ```
+
+<br>
+
+## 🔧 Using the Makefile
+
+This project uses a Makefile to streamline common development tasks. The Makefile includes utilities for managing Docker environments, installing project dependencies, running tests, and linting code.
 
 ```bash
 make help
@@ -37,17 +104,17 @@ make help
 
 ### → Key Commands
 
-- `make env`: Creates a `.env` file from the `.env.example` template.
-- `make install`: Installs project composer dependencies
-- `make update`: Updates project composer dependencies
-- `make up`: Starts all services using Docker Compose.
-- `make down`: Stops and removes all services.
-- `make logs`: Displays logs for all services.
-- `make ssh`: Logs into the running application container for command line operations.
-- `make lint`: Executes all linting procedures for YAML, PHP, and Composer files.
-- `make commit`: Runs cz-git, a commitizen adapter for commit message formatting in a native environment.
+* `make env`: Creates a `.env` file from the `.env.example` template.
+* `make install`: Installs project composer dependencies
+* `make update`: Updates project composer dependencies
+* `make up`: Starts all services using Docker Compose.
+* `make down`: Stops and removes all services.
+* `make logs`: Displays logs for all services.
+* `make ssh`: Logs into the running application container for command line operations.
+* `make lint`: Executes all linting procedures for YAML, PHP, and Composer files.
+* `make commit`: Runs cz-git, a commitizen adapter for commit message formatting in a native environment.
 
-Refer to the output of `make help` for a comprehensive list of available commands.
+For a full list of commands, run `make help`.
 
 <br>
 
@@ -57,15 +124,15 @@ Refer to the output of `make help` for a comprehensive list of available command
 >
 > Please feature/fix/update... into individual PRs (not one changing everything)
 
-- **Fork the Repository**: Start by forking the repository to your GitHub account.
-- **Create a Branch**: In your fork, create a new branch for your work. Name it appropriately based on the feature, fix, or update you're working on.
-- **Make Your Changes**: Implement your changes
-- **Run Tests**: Ensure all tests pass by running `make test`.
-- **Update Documentation**: If you've made changes that affect the project's documentation, ensure it is updated.
-- **Run Linters**: Ensure your code passes all linting checks using `make lint`.
-- **Commit Your Changes**: Use the [Conventional Commits](#-commit-message-guidelines) standard for your commit messages. You can use `make commit` to assist in creating commit messages.
-- **Push Your Changes**: Push your branch to your fork on GitHub.
-- **Open a Pull Request**: Submit a pull request to the `master` branch of the original repository. Ensure your PR is focused, addressing a single feature, fix, or improvement.
+* **Fork the Repository**: Start by forking the repository to your GitHub account.
+* **Create a Branch**: In your fork, create a new branch for your work. Name it appropriately based on the feature, fix, or update you're working on.
+* **Make Your Changes**: Implement your changes
+* **Run Tests**: Ensure all tests pass by running `make test`.
+* **Update Documentation**: If you've made changes that affect the project's documentation, ensure it is updated.
+* **Run Linters**: Ensure your code passes all linting checks using `make lint`.
+* **Commit Your Changes**: Use the [Conventional Commits](#-commit-message-guidelines) standard for your commit messages. You can use `make commit` to assist in creating commit messages.
+* **Push Your Changes**: Push your branch to your fork on GitHub.
+* **Open a Pull Request**: Submit a pull request to the `master` branch of the original repository. Ensure your PR is focused, addressing a single feature, fix, or improvement.
 
 <br>
 
@@ -93,7 +160,7 @@ By default, phpunit and phpstan commands will be ran against docker environment.
 
 <br>
 
-## ⚡️ Continuous Integration with GitHub Actions
+## 🔨 Continuous Integration with GitHub Actions
 
 Our project employs [GitHub Actions](https://github.com/features/actions) for continuous integration, ensuring code quality and reliability. We encourage contributors to review our workflow configurations to understand the CI processes:
 
@@ -113,10 +180,10 @@ Our project employs [GitHub Actions](https://github.com/features/actions) for co
 
 ## 📝 Before You Contribute
 
-- **Tests**: Include tests that cover any new features or bug fixes.
-- **Code Quality**: Utilize `make lint` for code style checks and `make lint-stan lint-psalm` for static analysis with [PHPStan](https://phpstan.org) and [Psalm](https://psalm.dev/).
-- **Documentation**: Update relevant documentation to reflect your changes, ensuring other developers can understand and use your contributions effectively.
-- **Commits**: use Conventional Commits standard to create a commit
+* **Tests**: Include tests that cover any new features or bug fixes.
+* **Code Quality**: Utilize `make lint` for code style checks and `make lint-stan lint-psalm` for static analysis with [PHPStan](https://phpstan.org) and [Psalm](https://psalm.dev/).
+* **Documentation**: Update relevant documentation to reflect your changes, ensuring other developers can understand and use your contributions effectively.
+* **Commits**: use Conventional Commits standard to create a commit
 
 <br>
 
@@ -151,7 +218,17 @@ git commit -am 'fix: something has been fixed'
 
 <br>
 
-## 🔍 Coding Standards and Tools
+## 📦 PHAR Dependencies
+
+We use [Phive](https://phar.io/) to manage PHAR dependencies. You can install all dependencies using the `make phive` command, which will be executed through the Docker environment.
+
+```bash
+make phive
+```
+
+<br>
+
+## 🔍 Coding Standards
 
 We enforce coding standards to maintain high code quality and readability. Here's a list of tools we use:
 
@@ -266,7 +343,7 @@ to run mutation tests.
 
 <br>
 
-## ⚙️ Static Code Analysis
+## 🔍 Static Code Analysis
 
 We use both [`phpstan/phpstan`](https://github.com/phpstan/phpstan) and [`vimeo/psalm`](https://github.com/vimeo/psalm) to statically analyze the code.
 
@@ -290,8 +367,8 @@ make lint-psalm-baseline
 
 to regenerate the baselines in:
 
-- [`../phpstan-baseline.neon`](../phpstan-baseline.neon).
-- [`../psalm-baseline.xml`](../psalm-baseline.xml).
+* [`../phpstan-baseline.neon`](../phpstan-baseline.neon).
+* [`../psalm-baseline.xml`](../psalm-baseline.xml).
 
 > [!IMPORTANT]
 >
@@ -299,7 +376,7 @@ to regenerate the baselines in:
 
 <br>
 
-## 🧪 Tests
+## 🧪 Unit and Functional Tests
 
 We use [`phpunit/phpunit`](https://github.com/sebastianbergmann/phpunit) and [`pestphp/pest`](https://github.com/pestphp/pest) to drive the development.
 
@@ -326,12 +403,12 @@ Pre-commit hooks are an optional but highly recommended way to automate the lint
 
 Our pre-commit configuration includes several hooks:
 
-- **Trailing Whitespace**: Removes unnecessary trailing spaces.
-- **End-of-File Fixer**: Ensures that files end with a newline.
-- **Check Added Large Files**: Prevents accidentally adding large files to the git repository, with a current limit set to 600 KB.
-- **Commitizen**: Ensures commit messages meet the conventional commit format. This hook is triggered at the commit message stage.
-- **PHP-CS-Fixer:** Enforces coding standards in PHP files.
-- **Markdown Lint:** Enforces coding standards in Markdown files.
+* **Trailing Whitespace**: Removes unnecessary trailing spaces.
+* **End-of-File Fixer**: Ensures that files end with a newline.
+* **Check Added Large Files**: Prevents accidentally adding large files to the git repository, with a current limit set to 600 KB.
+* **Commitizen**: Ensures commit messages meet the conventional commit format. This hook is triggered at the commit message stage.
+* **PHP-CS-Fixer:** Enforces coding standards in PHP files.
+* **Markdown Lint:** Enforces coding standards in Markdown files.
 
 ### → Installing Pre-commit Hooks
 
