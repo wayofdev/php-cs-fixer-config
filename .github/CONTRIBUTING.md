@@ -171,6 +171,7 @@ Our project employs [GitHub Actions](https://github.com/features/actions) for co
 | [`coding-standards.yml`](workflows/coding-standards.yml)       | Checks `yaml`, `md`, `composer`, `php` and commit coding standards. |
 | [`create-release.yml`](workflows/create-release.yml)           | Creates a release on GitHub.                                        |
 | [`dependency-analysis.yml`](workflows/dependency-analysis.yml) | Checks for dependency issues.                                       |
+| [`refactoring.yml`](workflows/refactoring.yml)                 | Runs rector/rector code check.                                      |
 | [`security-analysis.yml`](workflows/security-analysis.yml)     | Checks for security issues.                                         |
 | [`shellcheck.yml`](workflows/shellcheck.yml)                   | Checks shell scripts.                                               |
 | [`static-analysis.yml`](workflows/static-analysis.yml)         | Runs `psalm` and `phpstan` tools.                                   |
