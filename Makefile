@@ -97,7 +97,7 @@ help: ## Show this menu
 	@echo '    📑 Logs are stored in      $(MAKE_LOGFILE)'
 	@echo
 	@echo '    📦 Package                 php-cs-fixer-config (https://github.com/wayofdev/php-cs-fixer-config)'
-	@echo '    🤠 Makefile Author         Andrij Orlenko (https://github.com/lotyp)'
+	@echo '    🤠 Author                  Andrij Orlenko (https://github.com/lotyp)'
 	@echo '    🏢 ${YELLOW}Org                     wayofdev (https://github.com/wayofdev)${RST}'
 	@echo
 .PHONY: help
