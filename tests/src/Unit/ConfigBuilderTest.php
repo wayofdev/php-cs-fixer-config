@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WayOfDev\Tests\src\Unit;
+namespace WayOfDev\Tests\Unit;
 
 use BadMethodCallException;
 use LogicException;

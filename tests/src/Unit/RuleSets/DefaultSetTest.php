@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WayOfDev\Tests\src\Unit\RuleSets;
+namespace WayOfDev\Tests\Unit\RuleSets;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
