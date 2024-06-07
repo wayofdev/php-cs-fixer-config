@@ -23,7 +23,8 @@
     "homepage": "https://wayof.dev",
     "support": {
         "issues": "https://github.com/wayofdev/php-cs-fixer-config/issues",
-        "source": "https://github.com/wayofdev/php-cs-fixer-config"
+        "source": "https://github.com/wayofdev/php-cs-fixer-config",
+        "security": "https://github.com/wayofdev/php-cs-fixer-config/blob/master/.github/SECURITY.md"
     },
     "require": {
         "php": "^8.1",
@@ -43,6 +44,8 @@
         "roave/infection-static-analysis-plugin": "^1.35",
         "vimeo/psalm": "^5.23.1"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "WayOfDev\\PhpCsFixer\\Config\\": "src/"
@@ -50,7 +53,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "WayOfDev\\Tests\\": "tests/"
+            "WayOfDev\\Tests\\": "tests/src/"
         }
     },
     "config": {

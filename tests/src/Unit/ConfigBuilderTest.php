@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WayOfDev\Tests\Unit;
+namespace WayOfDev\Tests\src\Unit;
 
 use BadMethodCallException;
 use LogicException;
@@ -62,8 +62,8 @@ final class ConfigBuilderTest extends TestCase
     public function it_adds_directories(): void
     {
         $finder = $this->builder
-            ->inDir(__DIR__ . '/../../src')
-            ->inDir(__DIR__ . '/../../tests')
+            ->inDir(__DIR__ . '/../../../src')
+            ->inDir(__DIR__ . '/../../../tests/src')
             ->getConfig()
             ->getFinder()
         ;
@@ -71,7 +71,7 @@ final class ConfigBuilderTest extends TestCase
         $items = $this->finderToArray($finder);
 
         self::assertContains(__FILE__, $items);
-        self::assertContains(realpath(__DIR__ . '/../../src/ConfigBuilder.php'), $items);
+        self::assertContains(realpath(__DIR__ . '/../../../src/ConfigBuilder.php'), $items);
     }
 
     #[Test]
@@ -123,15 +123,15 @@ final class ConfigBuilderTest extends TestCase
     public function it_excludes_directories(): void
     {
         $finder = $this->builder
-            ->exclude([__DIR__ . '/../../src/RuleSets'])
-            ->inDir(__DIR__ . '/../../src')
+            ->exclude([__DIR__ . '/../../../src/RuleSets'])
+            ->inDir(__DIR__ . '/../../../src')
             ->getConfig()
             ->getFinder()
         ;
 
         $items = $this->finderToArray($finder);
 
-        self::assertNotContains(__DIR__ . '/../../src/RuleSets/DefaultSet.php', $items);
+        self::assertNotContains(__DIR__ . '/../../../src/RuleSets/DefaultSet.php', $items);
     }
 
     #[Test]
