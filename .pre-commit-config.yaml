@@ -9,6 +9,13 @@ repos:
       - id: check-added-large-files
         args: ['--maxkb=600']
 
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.27.0
+    hooks:
+      - id: commitizen
+        stages:
+          - commit-msg
+
   - repo: local
     hooks:
       - id: php-cs-fixer

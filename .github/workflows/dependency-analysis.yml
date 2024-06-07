@@ -1,13 +1,17 @@
 ---
 
 on:  # yamllint disable-line rule:truthy
-  pull_request:
+  push:
+    branches:
+      - master
     paths:
       - 'src/**'
       - 'tests/**'
       - '.php-cs-fixer.dist.php'
       - 'composer.*'
-  push:
+  pull_request:
+    branches:
+      - master
     paths:
       - 'src/**'
       - 'tests/**'

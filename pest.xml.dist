@@ -15,7 +15,7 @@
     </extensions>
     <testsuites>
         <testsuite name="Arch Tests">
-            <directory>tests/Arch</directory>
+            <directory>tests/src/Arch</directory>
         </testsuite>
     </testsuites>
     <source>

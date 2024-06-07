@@ -8,5 +8,5 @@ parameters:
         - tests/
         - .php-cs-fixer.dist.php
     excludePaths:
-        - tests/Arch
+        - tests/src/Arch
     tmpDir: .build/phpstan/

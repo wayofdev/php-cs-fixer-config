@@ -5,7 +5,7 @@
       <code><![CDATA[ExtendedPERSet]]></code>
     </UnusedClass>
   </file>
-  <file src="tests/Unit/ConfigBuilderTest.php">
+  <file src="tests/src/Unit/ConfigBuilderTest.php">
     <InvalidOperand>
       <code><![CDATA[$finder]]></code>
       <code><![CDATA[$this->builder->getConfig()->getFinder()]]></code>
@@ -27,7 +27,7 @@
       <code><![CDATA[invalidMethod]]></code>
     </UndefinedMagicMethod>
   </file>
-  <file src="tests/Unit/RuleSets/DefaultSetTest.php">
+  <file src="tests/src/Unit/RuleSets/DefaultSetTest.php">
     <PossiblyUnusedMethod>
       <code><![CDATA[it_allows_risky_rules]]></code>
       <code><![CDATA[it_merges_custom_rules_with_default_rules]]></code>
