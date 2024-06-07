@@ -1,4 +1,4 @@
-<div align="center">
+<p align="center">
     <br>
     <a href="https://wayof.dev" target="_blank">
         <picture>
@@ -7,18 +7,29 @@
         </picture>
     </a>
     <br>
-    <br>
-</div>
+</p>
 
 <p align="center">
-<a href="https://github.com/wayofdev/php-cs-fixer-config/actions" target="_blank"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwayofdev%2Fphp-cs-fixer-config%2Fbadge&style=flat-square&label=github%20actions"/></a>
-<a href="https://packagist.org/packages/wayofdev/php-cs-fixer-config" target="_blank"><img src="https://img.shields.io/packagist/dt/wayofdev/cs-fixer-config?&style=flat-square" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/wayofdev/php-cs-fixer-config" target="_blank"><img src="https://img.shields.io/packagist/v/wayofdev/cs-fixer-config?&style=flat-square" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/wayofdev/php-cs-fixer-config" target="_blank"><img alt="Commits since latest release" src="https://img.shields.io/github/commits-since/wayofdev/php-cs-fixer-config/latest?style=flat-square"></a>
-<a href="https://packagist.org/packages/wayofdev/php-cs-fixer-config" target="_blank"><img alt="PHP Version Require" src="https://poser.pugx.org/wayofdev/cs-fixer-config/require/php?style=flat-square"></a>
-<a href="https://app.codecov.io/gh/wayofdev/php-cs-fixer-config" target="_blank"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/wayofdev/php-cs-fixer-config?style=flat-square&logo=codecov"></a>
-<a href="https://dashboard.stryker-mutator.io/reports/github.com/wayofdev/php-cs-fixer-config/master" target="_blank"><img alt="Mutation testing badge" src="https://img.shields.io/endpoint?style=flat-square&label=mutation%20score&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fwayofdev%2Fphp-cs-fixer-config%2Fmaster"></a>
-<a href=""><img src="https://img.shields.io/badge/phpstan%20level-9%20of%209-brightgreen?style=flat-square" alt="PHP Stan Level 9 of 9"></a>
+    <strong>Build</strong><br>
+    <a href="https://github.com/wayofdev/php-cs-fixer-config/actions" target="_blank"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwayofdev%2Fphp-cs-fixer-config%2Fbadge&style=flat-square&label=github%20actions"/></a>
+</p>
+<p align="center">
+    <strong>Project</strong><br>
+    <a href="https://packagist.org/packages/wayofdev/cs-fixer-config" target="_blank"><img src="https://img.shields.io/packagist/dt/wayofdev/cs-fixer-config?&style=flat-square" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/wayofdev/cs-fixer-config" target="_blank"><img src="https://img.shields.io/packagist/v/wayofdev/cs-fixer-config?&style=flat-square" alt="Latest Stable Version"></a>
+    <a href="https://packagist.org/packages/wayofdev/cs-fixer-config" target="_blank"><img alt="Commits since latest release" src="https://img.shields.io/github/commits-since/wayofdev/php-cs-fixer-config/latest?style=flat-square"></a>
+    <a href="https://packagist.org/packages/wayofdev/cs-fixer-config" target="_blank"><img alt="PHP Version Require" src="https://poser.pugx.org/wayofdev/cs-fixer-config/require/php?style=flat-square"></a>
+</p>
+<p align="center">
+    <strong>Quality</strong><br>
+    <a href="https://app.codecov.io/gh/wayofdev/php-cs-fixer-config" target="_blank"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/wayofdev/php-cs-fixer-config?style=flat-square&logo=codecov"></a>
+    <a href="https://dashboard.stryker-mutator.io/reports/github.com/wayofdev/php-cs-fixer-config/master" target="_blank"><img alt="Mutation testing badge" src="https://img.shields.io/endpoint?style=flat-square&label=mutation%20score&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fwayofdev%2Fphp-cs-fixer-config%2Fmaster"></a>
+    <a href=""><img src="https://img.shields.io/badge/phpstan%20level-9%20of%209-brightgreen?style=flat-square" alt="PHP Stan Level 9 of 9"></a>
+</p>
+<p align="center">
+    <strong>Community</strong><br>
+    <a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Discord" src="https://img.shields.io/discord/1228506758562058391?style=flat-square&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
+    <a href="https://x.com/intent/follow?screen_name=wayofdev" target="_blank"><img alt="Follow on Twitter (X)" src="https://img.shields.io/badge/-Follow-black?style=flat-square&logo=X"></a>
 </p>
 
 <br>
@@ -307,22 +318,17 @@ You are more than welcome. Before contributing, kindly check our [contribution g
 ## 🫡 Contributors
 
 <p align="left">
-    <a href="https://github.com/wayofdev/php-cs-fixer-config/graphs/contributors">
-        <img align="left" src="https://img.shields.io/github/contributors-anon/wayofdev/php-cs-fixer-config?style=for-the-badge" alt="Contributors Badge"/>
-    </a>
-</p>
-
+<a href="https://github.com/wayofdev/php-cs-fixer-config/graphs/contributors">
+<img align="left" src="https://img.shields.io/github/contributors-anon/wayofdev/php-cs-fixer-config?style=for-the-badge" alt="Contributors Badge"/>
+</a>
 <br>
+<br>
+</p>
 
 ## 🌐 Social Links
 
 * **Twitter:** Follow our organization [@wayofdev](https://twitter.com/intent/follow?screen_name=wayofdev) and the author [@wlotyp](https://twitter.com/intent/follow?screen_name=wlotyp).
 * **Discord:** Join our community on [Discord](https://discord.gg/CE3TcCC5vr).
-
-<p align="left">
-    <a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Discord Link" src="https://img.shields.io/discord/1228506758562058391?style=for-the-badge&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
-    <a href="https://x.com/intent/follow?screen_name=wayofdev" target="_blank"><img alt="Follow on Twitter (X)" src="https://img.shields.io/badge/-Follow-black?style=for-the-badge&logo=X"></a>
-</p>
 
 <br>
 

@@ -53,6 +53,8 @@ MARKDOWN_LINT_RUNNER ?= $(DOCKER) run --rm $$(tty -s && echo "-it" || echo) \
 
 PHIVE_RUNNER ?= $(DOCKER_COMPOSE) run --rm --no-deps app
 
+NPM_RUNNER ?= pnpm
+
 EXPORT_VARS = '\
 	$${COMPOSE_PROJECT_NAME} \
 	$${COMPOSER_AUTH} \

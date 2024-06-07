@@ -22,5 +22,6 @@
             <directory name="tests/src/Arch/"/>
         </ignoreFiles>
         <file name=".php-cs-fixer.dist.php"/>
+        <file name="rector.php"/>
     </projectFiles>
 </psalm>
