@@ -1,7 +1,5 @@
 ---
 
-name: 🧪 Unit testing
-
 on:  # yamllint disable-line rule:truthy
   pull_request:
     branches:
@@ -9,6 +7,8 @@ on:  # yamllint disable-line rule:truthy
   push:
     branches:
       - master
+
+name: 🧪 Unit testing
 
 jobs:
   code-coverage:
@@ -56,7 +56,7 @@ jobs:
           key: php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}
           restore-keys: php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-
 
-      - name: 📥 Install "${{ matrix.dependencies }}" dependencies
+      - name: 📥 Install "${{ matrix.dependencies }}" dependencies with composer
         uses: wayofdev/gh-actions/actions/composer/install@v3.1.1
         with:
           dependencies: ${{ matrix.dependencies }}
