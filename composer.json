@@ -81,10 +81,12 @@
         "cs:diff": "php-cs-fixer fix --dry-run -v --diff",
         "cs:fix": "php-cs-fixer fix -v",
         "infect": [
+            "Composer\\Config::disableProcessTimeout",
             "@putenv XDEBUG_MODE=coverage",
             "roave-infection-static-analysis-plugin"
         ],
         "infect:ci": [
+            "Composer\\Config::disableProcessTimeout",
             "@putenv XDEBUG_MODE=coverage",
             "roave-infection-static-analysis-plugin --ansi --logger-github --ignore-msi-with-no-mutations --only-covered"
         ],
@@ -106,7 +108,7 @@
         ],
         "test:cc": [
             "@putenv XDEBUG_MODE=coverage",
-            "pest --coverage --coverage-clover=.build/phpunit/logs/clover.xml"
+            "pest --coverage --coverage-clover=.build/phpunit/logs/clover.xml --color=always"
         ]
     }
 }
