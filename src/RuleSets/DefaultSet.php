@@ -65,6 +65,9 @@ final class DefaultSet implements RuleSet
             'phpdoc_align' => [
                 'align' => 'left',
             ],
+            'phpdoc_to_comment' => [
+                'allow_before_return_statement' => true,
+            ],
 
             'ordered_class_elements' => [
                 'sort_algorithm' => 'none',
