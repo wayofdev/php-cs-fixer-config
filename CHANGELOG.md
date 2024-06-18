@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.5.2](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.5.1...v1.5.2) (2024-06-18)
+
+
+### Bug Fixes
+
+* allows to use [@return](https://github.com/return) tags in configs ([18c6524](https://github.com/wayofdev/php-cs-fixer-config/commit/18c6524392c993317b968ee90d67c1e7ef5defac))
+
+
+### Documentation
+
+* update contributing guidelines ([4df01c4](https://github.com/wayofdev/php-cs-fixer-config/commit/4df01c4d578d18f9397ed892225f3a8eb08112c0))
+
+
+### Dependencies
+
+* **deps:** update actions/checkout action to v4.1.7 ([67b4f99](https://github.com/wayofdev/php-cs-fixer-config/commit/67b4f993b52934597dbfd3324a72307ecce4bb91))
+* **deps:** update dependency pestphp/pest to v2.34.8 ([94713ef](https://github.com/wayofdev/php-cs-fixer-config/commit/94713eff2048dbf866343fe420e11e0c036a4d99))
+* **deps:** update googleapis/release-please-action action to v4.1.3 ([4122af4](https://github.com/wayofdev/php-cs-fixer-config/commit/4122af46150d775275f07f97aeb097447cf07ee8))
+* **deps:** update wayofdev/gh-actions action to v3.1.1 ([05cffaf](https://github.com/wayofdev/php-cs-fixer-config/commit/05cffaf27e13a27f962d11a4b67d64502c19644a))
+
 ## [1.5.1](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.5.0...v1.5.1) (2024-06-05)
 
 
