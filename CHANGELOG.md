@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.3](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.5.2...v1.5.3) (2024-06-18)
+
+
+### Dependencies
+
+* **deps:** update codecov/codecov-action action to v4.5.0 ([b202d7c](https://github.com/wayofdev/php-cs-fixer-config/commit/b202d7c1a6e921a697830b35dffc191ac41ed614))
+* **deps:** update dependency phpstan/phpstan to v1.11.5 ([e58b071](https://github.com/wayofdev/php-cs-fixer-config/commit/e58b07114a17bc6b7232128784264088b59fe826))
+
 ## [1.5.2](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.5.1...v1.5.2) (2024-06-18)
 
 
