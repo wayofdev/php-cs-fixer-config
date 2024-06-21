@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.4](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.5.3...v1.5.4) (2024-06-21)
+
+
+### Dependencies
+
+* **deps:** update dependency ergebnis/phpunit-slow-test-detector to v2.15.0 ([8c7d77b](https://github.com/wayofdev/php-cs-fixer-config/commit/8c7d77b996d5562889873761c83a4f5bddfcb440))
+* **deps:** update dependency friendsofphp/php-cs-fixer to v3.59.3 ([9de5e74](https://github.com/wayofdev/php-cs-fixer-config/commit/9de5e745ecad14c83162216ad6c76986b31b7347))
+
 ## [1.5.3](https://github.com/wayofdev/php-cs-fixer-config/compare/v1.5.2...v1.5.3) (2024-06-18)
 
 
